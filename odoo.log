@@ -1,0 +1,1918 @@
+2023-09-30 20:22:19,942 2056 INFO ? odoo: Odoo version 15.0-20230929 
+2023-09-30 20:22:19,942 2056 INFO ? odoo: Using configuration file at E:\ODOO\server\odoo.conf 
+2023-09-30 20:22:19,942 2056 INFO ? odoo: addons paths: ['E:\\ODOO\\server\\odoo\\addons', 'c:\\users\\thinkpad\\appdata\\local\\openerp s.a\\odoo\\addons\\15.0', 'e:\\odoo\\server\\odoo\\addons'] 
+2023-09-30 20:22:19,942 2056 INFO ? odoo: database: openpg@localhost:5432 
+2023-09-30 20:22:22,198 2056 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at E:\ODOO\thirdparty\wkhtmltopdf.exe 
+2023-09-30 20:22:22,994 2056 INFO ? odoo.service.server: Initiating shutdown 
+2023-09-30 20:22:22,995 2056 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2023-09-30 20:22:25,218 8380 INFO ? odoo: Odoo version 15.0-20230929 
+2023-09-30 20:22:25,219 8380 INFO ? odoo: Using configuration file at E:\ODOO\server\odoo.conf 
+2023-09-30 20:22:25,219 8380 INFO ? odoo: addons paths: ['E:\\ODOO\\server\\odoo\\addons', 'c:\\users\\thinkpad\\appdata\\local\\openerp s.a\\odoo\\addons\\15.0', 'e:\\odoo\\server\\odoo\\addons'] 
+2023-09-30 20:22:25,219 8380 INFO ? odoo: database: openpg@localhost:5432 
+2023-09-30 20:22:25,440 8380 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at E:\ODOO\thirdparty\wkhtmltopdf.exe 
+2023-09-30 20:22:25,807 8380 INFO ? odoo.service.server: HTTP service (werkzeug) running on DESKTOP-GR2F5KU:8069 
+2023-09-30 20:22:29,929 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:22:34,043 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:22:44,955 8380 INFO ? odoo.http: HTTP Configuring static files 
+2023-09-30 20:22:49,082 8380 INFO odoo odoo.sql_db: Connection to the database failed 
+2023-09-30 20:22:49,082 8380 INFO odoo odoo.http: Generating nondb routing 
+2023-09-30 20:22:53,228 8380 INFO odoo odoo.sql_db: Connection to the database failed 
+2023-09-30 20:22:53,233 8380 INFO odoo werkzeug: 127.0.0.1 - - [30/Sep/2023 20:22:53] "GET / HTTP/1.1" 500 - 0 0.000 8.261
+2023-09-30 20:22:53,245 8380 ERROR odoo werkzeug: Error on request:
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\modules\registry.py", line 61, in __new__
+    return cls.registries[db_name]
+  File "E:\ODOO\server\odoo\tools\func.py", line 71, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\tools\lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\http.py", line 1482, in dispatch
+    odoo.registry(db).check_signaling()
+  File "E:\ODOO\server\odoo\__init__.py", line 104, in registry
+    return modules.registry.Registry(database_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 63, in __new__
+    return cls.new(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 75, in new
+    registry.init(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 151, in init
+    with closing(self.cursor()) as cr:
+  File "E:\ODOO\server\odoo\modules\registry.py", line 728, in cursor
+    return self._db.cursor()
+  File "E:\ODOO\server\odoo\sql_db.py", line 742, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "E:\ODOO\server\odoo\sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "E:\ODOO\server\odoo\sql_db.py", line 603, in _locked
+    return fun(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\sql_db.py", line 671, in borrow
+    **connection_info)
+  File "E:\ODOO\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\modules\registry.py", line 61, in __new__
+    return cls.registries[db_name]
+  File "E:\ODOO\server\odoo\tools\func.py", line 71, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\tools\lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\http.py", line 1469, in _dispatch_nodb
+    result = request.dispatch()
+  File "E:\ODOO\server\odoo\http.py", line 815, in dispatch
+    r = self._call_function(**self.params)
+  File "E:\ODOO\server\odoo\http.py", line 368, in _call_function
+    return checked_call(self.db, *args, **kwargs)
+  File "E:\ODOO\server\odoo\service\model.py", line 92, in wrapper
+    if odoo.registry(dbname)._init and not odoo.tools.config['test_enable']:
+  File "E:\ODOO\server\odoo\__init__.py", line 104, in registry
+    return modules.registry.Registry(database_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 63, in __new__
+    return cls.new(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 75, in new
+    registry.init(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 151, in init
+    with closing(self.cursor()) as cr:
+  File "E:\ODOO\server\odoo\modules\registry.py", line 728, in cursor
+    return self._db.cursor()
+  File "E:\ODOO\server\odoo\sql_db.py", line 742, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "E:\ODOO\server\odoo\sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "E:\ODOO\server\odoo\sql_db.py", line 603, in _locked
+    return fun(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\sql_db.py", line 671, in borrow
+    **connection_info)
+  File "E:\ODOO\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+Exception
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\ODOO\python\lib\site-packages\werkzeug\serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "E:\ODOO\python\lib\site-packages\werkzeug\serving.py", line 294, in execute
+    application_iter = app(environ, start_response)
+  File "E:\ODOO\server\odoo\service\server.py", line 482, in app
+    return self.app(e, s)
+  File "E:\ODOO\server\odoo\service\wsgi_server.py", line 112, in application
+    return application_unproxied(environ, start_response)
+  File "E:\ODOO\server\odoo\service\wsgi_server.py", line 87, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1305, in __call__
+    return self.dispatch(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1271, in __call__
+    return self.app(environ, start_wrapped)
+  File "E:\ODOO\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1498, in dispatch
+    result = _dispatch_nodb()
+  File "E:\ODOO\server\odoo\http.py", line 1471, in _dispatch_nodb
+    return request._handle_exception(e)
+  File "E:\ODOO\server\odoo\http.py", line 759, in _handle_exception
+    return super(HttpRequest, self)._handle_exception(exception)
+  File "E:\ODOO\server\odoo\http.py", line 301, in _handle_exception
+    raise exception.with_traceback(None) from new_cause
+psycopg2.OperationalError: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432? - - -
+2023-09-30 20:23:30,789 8380 INFO odoo odoo.sql_db: Connection to the database failed 
+2023-09-30 20:23:34,911 8380 INFO odoo odoo.sql_db: Connection to the database failed 
+2023-09-30 20:23:34,915 8380 INFO odoo werkzeug: 127.0.0.1 - - [30/Sep/2023 20:23:34] "GET / HTTP/1.1" 500 - 0 0.000 8.232
+2023-09-30 20:23:34,933 8380 ERROR odoo werkzeug: Error on request:
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\modules\registry.py", line 61, in __new__
+    return cls.registries[db_name]
+  File "E:\ODOO\server\odoo\tools\func.py", line 71, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\tools\lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\http.py", line 1482, in dispatch
+    odoo.registry(db).check_signaling()
+  File "E:\ODOO\server\odoo\__init__.py", line 104, in registry
+    return modules.registry.Registry(database_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 63, in __new__
+    return cls.new(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 75, in new
+    registry.init(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 151, in init
+    with closing(self.cursor()) as cr:
+  File "E:\ODOO\server\odoo\modules\registry.py", line 728, in cursor
+    return self._db.cursor()
+  File "E:\ODOO\server\odoo\sql_db.py", line 742, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "E:\ODOO\server\odoo\sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "E:\ODOO\server\odoo\sql_db.py", line 603, in _locked
+    return fun(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\sql_db.py", line 671, in borrow
+    **connection_info)
+  File "E:\ODOO\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\modules\registry.py", line 61, in __new__
+    return cls.registries[db_name]
+  File "E:\ODOO\server\odoo\tools\func.py", line 71, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\tools\lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\http.py", line 1469, in _dispatch_nodb
+    result = request.dispatch()
+  File "E:\ODOO\server\odoo\http.py", line 815, in dispatch
+    r = self._call_function(**self.params)
+  File "E:\ODOO\server\odoo\http.py", line 368, in _call_function
+    return checked_call(self.db, *args, **kwargs)
+  File "E:\ODOO\server\odoo\service\model.py", line 92, in wrapper
+    if odoo.registry(dbname)._init and not odoo.tools.config['test_enable']:
+  File "E:\ODOO\server\odoo\__init__.py", line 104, in registry
+    return modules.registry.Registry(database_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 63, in __new__
+    return cls.new(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 75, in new
+    registry.init(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 151, in init
+    with closing(self.cursor()) as cr:
+  File "E:\ODOO\server\odoo\modules\registry.py", line 728, in cursor
+    return self._db.cursor()
+  File "E:\ODOO\server\odoo\sql_db.py", line 742, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "E:\ODOO\server\odoo\sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "E:\ODOO\server\odoo\sql_db.py", line 603, in _locked
+    return fun(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\sql_db.py", line 671, in borrow
+    **connection_info)
+  File "E:\ODOO\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+Exception
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\ODOO\python\lib\site-packages\werkzeug\serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "E:\ODOO\python\lib\site-packages\werkzeug\serving.py", line 294, in execute
+    application_iter = app(environ, start_response)
+  File "E:\ODOO\server\odoo\service\server.py", line 482, in app
+    return self.app(e, s)
+  File "E:\ODOO\server\odoo\service\wsgi_server.py", line 112, in application
+    return application_unproxied(environ, start_response)
+  File "E:\ODOO\server\odoo\service\wsgi_server.py", line 87, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1305, in __call__
+    return self.dispatch(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1271, in __call__
+    return self.app(environ, start_wrapped)
+  File "E:\ODOO\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1498, in dispatch
+    result = _dispatch_nodb()
+  File "E:\ODOO\server\odoo\http.py", line 1471, in _dispatch_nodb
+    return request._handle_exception(e)
+  File "E:\ODOO\server\odoo\http.py", line 759, in _handle_exception
+    return super(HttpRequest, self)._handle_exception(exception)
+  File "E:\ODOO\server\odoo\http.py", line 301, in _handle_exception
+    raise exception.with_traceback(None) from new_cause
+psycopg2.OperationalError: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432? - - -
+2023-09-30 20:23:43,273 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:23:43,294 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:23:43] "GET / HTTP/1.1" 303 - 0 0.000 4.118
+2023-09-30 20:23:47,396 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:23:51,519 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:23:51,525 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:23:51] "GET /web HTTP/1.1" 303 - 0 0.000 8.225
+2023-09-30 20:23:55,606 8380 INFO odoo odoo.sql_db: Connection to the database failed 
+2023-09-30 20:23:59,693 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:24:03,805 8380 INFO odoo odoo.sql_db: Connection to the database failed 
+2023-09-30 20:24:03,812 8380 INFO odoo werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:03] "GET / HTTP/1.1" 500 - 0 0.000 16.136
+2023-09-30 20:24:03,833 8380 ERROR odoo werkzeug: Error on request:
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\modules\registry.py", line 61, in __new__
+    return cls.registries[db_name]
+  File "E:\ODOO\server\odoo\tools\func.py", line 71, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\tools\lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\http.py", line 1482, in dispatch
+    odoo.registry(db).check_signaling()
+  File "E:\ODOO\server\odoo\__init__.py", line 104, in registry
+    return modules.registry.Registry(database_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 63, in __new__
+    return cls.new(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 75, in new
+    registry.init(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 151, in init
+    with closing(self.cursor()) as cr:
+  File "E:\ODOO\server\odoo\modules\registry.py", line 728, in cursor
+    return self._db.cursor()
+  File "E:\ODOO\server\odoo\sql_db.py", line 742, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "E:\ODOO\server\odoo\sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "E:\ODOO\server\odoo\sql_db.py", line 603, in _locked
+    return fun(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\sql_db.py", line 671, in borrow
+    **connection_info)
+  File "E:\ODOO\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\modules\registry.py", line 61, in __new__
+    return cls.registries[db_name]
+  File "E:\ODOO\server\odoo\tools\func.py", line 71, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\tools\lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\http.py", line 1469, in _dispatch_nodb
+    result = request.dispatch()
+  File "E:\ODOO\server\odoo\http.py", line 815, in dispatch
+    r = self._call_function(**self.params)
+  File "E:\ODOO\server\odoo\http.py", line 368, in _call_function
+    return checked_call(self.db, *args, **kwargs)
+  File "E:\ODOO\server\odoo\service\model.py", line 92, in wrapper
+    if odoo.registry(dbname)._init and not odoo.tools.config['test_enable']:
+  File "E:\ODOO\server\odoo\__init__.py", line 104, in registry
+    return modules.registry.Registry(database_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 63, in __new__
+    return cls.new(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 75, in new
+    registry.init(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 151, in init
+    with closing(self.cursor()) as cr:
+  File "E:\ODOO\server\odoo\modules\registry.py", line 728, in cursor
+    return self._db.cursor()
+  File "E:\ODOO\server\odoo\sql_db.py", line 742, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "E:\ODOO\server\odoo\sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "E:\ODOO\server\odoo\sql_db.py", line 603, in _locked
+    return fun(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\sql_db.py", line 671, in borrow
+    **connection_info)
+  File "E:\ODOO\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+Exception
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\ODOO\python\lib\site-packages\werkzeug\serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "E:\ODOO\python\lib\site-packages\werkzeug\serving.py", line 294, in execute
+    application_iter = app(environ, start_response)
+  File "E:\ODOO\server\odoo\service\server.py", line 482, in app
+    return self.app(e, s)
+  File "E:\ODOO\server\odoo\service\wsgi_server.py", line 112, in application
+    return application_unproxied(environ, start_response)
+  File "E:\ODOO\server\odoo\service\wsgi_server.py", line 87, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1305, in __call__
+    return self.dispatch(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1271, in __call__
+    return self.app(environ, start_wrapped)
+  File "E:\ODOO\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1498, in dispatch
+    result = _dispatch_nodb()
+  File "E:\ODOO\server\odoo\http.py", line 1471, in _dispatch_nodb
+    return request._handle_exception(e)
+  File "E:\ODOO\server\odoo\http.py", line 759, in _handle_exception
+    return super(HttpRequest, self)._handle_exception(exception)
+  File "E:\ODOO\server\odoo\http.py", line 301, in _handle_exception
+    raise exception.with_traceback(None) from new_cause
+psycopg2.OperationalError: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432? - - -
+2023-09-30 20:24:07,885 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:24:07,984 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:07] "GET /web/database/selector HTTP/1.1" 200 - 0 0.000 16.153
+2023-09-30 20:24:08,018 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:08] "GET /web/static/lib/fontawesome/css/font-awesome.css HTTP/1.1" 200 - - - -
+2023-09-30 20:24:08,338 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:08] "GET /web/static/lib/bootstrap/css/bootstrap.css HTTP/1.1" 200 - - - -
+2023-09-30 20:24:08,341 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:08] "GET /web/static/lib/jquery/jquery.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:08,342 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:08] "GET /web/static/lib/popper/popper.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:08,679 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:08] "GET /web/static/lib/bootstrap/js/index.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:08,681 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:08] "GET /web/static/lib/bootstrap/js/util.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:08,687 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:08] "GET /web/static/lib/bootstrap/js/alert.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:08,979 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:08] "GET /web/static/lib/bootstrap/js/button.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:09,000 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:09] "GET /web/static/lib/bootstrap/js/carousel.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:09,002 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:09] "GET /web/static/lib/bootstrap/js/collapse.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:09,009 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:09] "GET /web/static/lib/bootstrap/js/dropdown.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:09,302 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:09] "GET /web/static/lib/bootstrap/js/modal.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:09,319 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:09] "GET /web/static/lib/bootstrap/js/tooltip.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:09,328 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:09] "GET /web/static/lib/bootstrap/js/popover.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:09,329 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:09] "GET /web/static/lib/bootstrap/js/scrollspy.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:09,615 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:09] "GET /web/static/lib/bootstrap/js/tab.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:09,645 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:09] "GET /web/static/src/public/database_manager.js HTTP/1.1" 200 - - - -
+2023-09-30 20:24:09,646 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:09] "GET /web/static/img/logo2.png HTTP/1.1" 200 - - - -
+2023-09-30 20:24:09,930 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:09] "GET /web/static/lib/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 - - - -
+2023-09-30 20:24:10,202 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:24:10] "GET /web/static/img/favicon.ico HTTP/1.1" 200 - - - -
+2023-09-30 20:25:44,679 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:25:44,773 8380 INFO None odoo.service.db: Create database `hoanglinh`. 
+2023-09-30 20:25:48,892 8380 INFO None odoo.sql_db: Connection to the database failed 
+2023-09-30 20:25:48,892 8380 ERROR None odoo.http: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+ 
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\http.py", line 141, in dispatch_rpc
+    result = dispatch(method, params)
+  File "E:\ODOO\server\odoo\service\db.py", line 462, in dispatch
+    return g[exp_method_name](*params)
+  File "<decorator-gen-14>", line 2, in exp_create_database
+  File "E:\ODOO\server\odoo\service\db.py", line 41, in if_db_mgt_enabled
+    return method(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\service\db.py", line 130, in exp_create_database
+    _create_empty_database(db_name)
+  File "E:\ODOO\server\odoo\service\db.py", line 99, in _create_empty_database
+    with closing(db.cursor()) as cr:
+  File "E:\ODOO\server\odoo\sql_db.py", line 742, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "E:\ODOO\server\odoo\sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "E:\ODOO\server\odoo\sql_db.py", line 603, in _locked
+    return fun(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\sql_db.py", line 671, in borrow
+    **connection_info)
+  File "E:\ODOO\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+
+2023-09-30 20:25:53,056 8380 INFO None odoo.sql_db: Connection to the database failed 
+2023-09-30 20:25:53,092 8380 INFO None werkzeug: 127.0.0.1 - - [30/Sep/2023 20:25:53] "POST /web/database/create HTTP/1.1" 200 - 0 0.000 12.539
+2023-09-30 20:29:15,201 8380 INFO odoo odoo.sql_db: Connection to the database failed 
+2023-09-30 20:29:19,260 8380 INFO odoo odoo.sql_db: Connection to the database failed 
+2023-09-30 20:29:19,264 8380 INFO odoo werkzeug: 127.0.0.1 - - [30/Sep/2023 20:29:19] "GET / HTTP/1.1" 500 - 0 0.000 8.167
+2023-09-30 20:29:19,281 8380 ERROR odoo werkzeug: Error on request:
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\modules\registry.py", line 61, in __new__
+    return cls.registries[db_name]
+  File "E:\ODOO\server\odoo\tools\func.py", line 71, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\tools\lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\http.py", line 1482, in dispatch
+    odoo.registry(db).check_signaling()
+  File "E:\ODOO\server\odoo\__init__.py", line 104, in registry
+    return modules.registry.Registry(database_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 63, in __new__
+    return cls.new(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 75, in new
+    registry.init(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 151, in init
+    with closing(self.cursor()) as cr:
+  File "E:\ODOO\server\odoo\modules\registry.py", line 728, in cursor
+    return self._db.cursor()
+  File "E:\ODOO\server\odoo\sql_db.py", line 742, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "E:\ODOO\server\odoo\sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "E:\ODOO\server\odoo\sql_db.py", line 603, in _locked
+    return fun(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\sql_db.py", line 671, in borrow
+    **connection_info)
+  File "E:\ODOO\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\modules\registry.py", line 61, in __new__
+    return cls.registries[db_name]
+  File "E:\ODOO\server\odoo\tools\func.py", line 71, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\tools\lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\http.py", line 1469, in _dispatch_nodb
+    result = request.dispatch()
+  File "E:\ODOO\server\odoo\http.py", line 815, in dispatch
+    r = self._call_function(**self.params)
+  File "E:\ODOO\server\odoo\http.py", line 368, in _call_function
+    return checked_call(self.db, *args, **kwargs)
+  File "E:\ODOO\server\odoo\service\model.py", line 92, in wrapper
+    if odoo.registry(dbname)._init and not odoo.tools.config['test_enable']:
+  File "E:\ODOO\server\odoo\__init__.py", line 104, in registry
+    return modules.registry.Registry(database_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 63, in __new__
+    return cls.new(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 75, in new
+    registry.init(db_name)
+  File "E:\ODOO\server\odoo\modules\registry.py", line 151, in init
+    with closing(self.cursor()) as cr:
+  File "E:\ODOO\server\odoo\modules\registry.py", line 728, in cursor
+    return self._db.cursor()
+  File "E:\ODOO\server\odoo\sql_db.py", line 742, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "E:\ODOO\server\odoo\sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "E:\ODOO\server\odoo\sql_db.py", line 603, in _locked
+    return fun(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\sql_db.py", line 671, in borrow
+    **connection_info)
+  File "E:\ODOO\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+Exception
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\ODOO\python\lib\site-packages\werkzeug\serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "E:\ODOO\python\lib\site-packages\werkzeug\serving.py", line 294, in execute
+    application_iter = app(environ, start_response)
+  File "E:\ODOO\server\odoo\service\server.py", line 482, in app
+    return self.app(e, s)
+  File "E:\ODOO\server\odoo\service\wsgi_server.py", line 112, in application
+    return application_unproxied(environ, start_response)
+  File "E:\ODOO\server\odoo\service\wsgi_server.py", line 87, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1305, in __call__
+    return self.dispatch(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1271, in __call__
+    return self.app(environ, start_wrapped)
+  File "E:\ODOO\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1498, in dispatch
+    result = _dispatch_nodb()
+  File "E:\ODOO\server\odoo\http.py", line 1471, in _dispatch_nodb
+    return request._handle_exception(e)
+  File "E:\ODOO\server\odoo\http.py", line 759, in _handle_exception
+    return super(HttpRequest, self)._handle_exception(exception)
+  File "E:\ODOO\server\odoo\http.py", line 301, in _handle_exception
+    raise exception.with_traceback(None) from new_cause
+psycopg2.OperationalError: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432? - - -
+2023-09-30 20:29:50,333 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:29:50,424 8380 INFO None odoo.service.db: Create database `database`. 
+2023-09-30 20:29:54,518 8380 INFO None odoo.sql_db: Connection to the database failed 
+2023-09-30 20:29:54,518 8380 ERROR None odoo.http: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+ 
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\http.py", line 141, in dispatch_rpc
+    result = dispatch(method, params)
+  File "E:\ODOO\server\odoo\service\db.py", line 462, in dispatch
+    return g[exp_method_name](*params)
+  File "<decorator-gen-14>", line 2, in exp_create_database
+  File "E:\ODOO\server\odoo\service\db.py", line 41, in if_db_mgt_enabled
+    return method(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\service\db.py", line 130, in exp_create_database
+    _create_empty_database(db_name)
+  File "E:\ODOO\server\odoo\service\db.py", line 99, in _create_empty_database
+    with closing(db.cursor()) as cr:
+  File "E:\ODOO\server\odoo\sql_db.py", line 742, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "E:\ODOO\server\odoo\sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "E:\ODOO\server\odoo\sql_db.py", line 603, in _locked
+    return fun(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\sql_db.py", line 671, in borrow
+    **connection_info)
+  File "E:\ODOO\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+
+2023-09-30 20:29:58,662 8380 INFO None odoo.sql_db: Connection to the database failed 
+2023-09-30 20:29:58,685 8380 INFO None werkzeug: 127.0.0.1 - - [30/Sep/2023 20:29:58] "POST /web/database/create HTTP/1.1" 200 - 0 0.000 12.453
+2023-09-30 20:33:05,502 13776 INFO ? odoo: Odoo version 15.0-20230929 
+2023-09-30 20:33:05,502 13776 INFO ? odoo: Using configuration file at E:\ODOO\server\odoo.conf 
+2023-09-30 20:33:05,502 13776 INFO ? odoo: addons paths: ['E:\\ODOO\\server\\odoo\\addons', 'c:\\users\\thinkpad\\appdata\\local\\openerp s.a\\odoo\\addons\\15.0', 'e:\\odoo\\server\\odoo\\addons'] 
+2023-09-30 20:33:05,502 13776 INFO ? odoo: database: openpg@localhost:5432 
+2023-09-30 20:33:05,664 13776 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at E:\ODOO\thirdparty\wkhtmltopdf.exe 
+2023-09-30 20:33:05,883 13776 INFO ? odoo.service.server: HTTP service (werkzeug) running on DESKTOP-GR2F5KU:8069 
+2023-09-30 20:33:09,963 13776 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:33:14,077 13776 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:33:38,003 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:33:38,005 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:33:38] "GET /web/database/create HTTP/1.1" 405 - 0 0.000 4.086
+2023-09-30 20:33:42,136 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:33:42,138 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:33:42] "GET /favicon.ico HTTP/1.1" 404 - 0 0.000 4.080
+2023-09-30 20:33:46,211 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:33:46,215 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:33:46] "GET / HTTP/1.1" 303 - 0 0.000 6.095
+2023-09-30 20:33:50,336 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:33:54,464 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:33:54,469 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:33:54] "GET /web HTTP/1.1" 303 - 0 0.000 8.248
+2023-09-30 20:33:58,591 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:34:02,694 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:34:02,723 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/database/selector HTTP/1.1" 200 - 0 0.000 8.248
+2023-09-30 20:34:02,751 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/js/util.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,751 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/jquery/jquery.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,751 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/js/index.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,752 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/css/bootstrap.css HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,752 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/fontawesome/css/font-awesome.css HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,752 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/popper/popper.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,756 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/js/alert.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,758 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/js/button.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,764 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/js/carousel.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,766 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/js/collapse.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,768 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/js/dropdown.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,768 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/js/modal.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,773 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/js/tooltip.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,774 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/js/scrollspy.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,778 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/js/popover.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,779 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/bootstrap/js/tab.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,780 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/src/public/database_manager.js HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,795 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/img/logo2.png HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,908 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/lib/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 - - - -
+2023-09-30 20:34:02,946 8380 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:02] "GET /web/static/img/favicon.ico HTTP/1.1" 200 - - - -
+2023-09-30 20:34:25,442 8380 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:34:25,521 8380 INFO None odoo.service.db: Create database `database`. 
+2023-09-30 20:34:29,600 8380 INFO None odoo.sql_db: Connection to the database failed 
+2023-09-30 20:34:29,600 8380 ERROR None odoo.http: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+ 
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\http.py", line 141, in dispatch_rpc
+    result = dispatch(method, params)
+  File "E:\ODOO\server\odoo\service\db.py", line 462, in dispatch
+    return g[exp_method_name](*params)
+  File "<decorator-gen-14>", line 2, in exp_create_database
+  File "E:\ODOO\server\odoo\service\db.py", line 41, in if_db_mgt_enabled
+    return method(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\service\db.py", line 130, in exp_create_database
+    _create_empty_database(db_name)
+  File "E:\ODOO\server\odoo\service\db.py", line 99, in _create_empty_database
+    with closing(db.cursor()) as cr:
+  File "E:\ODOO\server\odoo\sql_db.py", line 742, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "E:\ODOO\server\odoo\sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "E:\ODOO\server\odoo\sql_db.py", line 603, in _locked
+    return fun(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\sql_db.py", line 671, in borrow
+    **connection_info)
+  File "E:\ODOO\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+
+2023-09-30 20:34:33,724 8380 INFO None odoo.sql_db: Connection to the database failed 
+2023-09-30 20:34:33,753 8380 INFO None werkzeug: 127.0.0.1 - - [30/Sep/2023 20:34:33] "POST /web/database/create HTTP/1.1" 200 - 0 0.000 12.382
+2023-09-30 20:49:46,602 8380 INFO ? odoo.service.server: Initiating shutdown 
+2023-09-30 20:49:46,602 8380 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2023-09-30 20:49:46,987 8380 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 0 connections  
+2023-09-30 20:49:49,658 13984 INFO ? odoo: Odoo version 15.0-20230929 
+2023-09-30 20:49:49,659 13984 INFO ? odoo: Using configuration file at E:\ODOO\server\odoo.conf 
+2023-09-30 20:49:49,659 13984 INFO ? odoo: addons paths: ['E:\\ODOO\\server\\odoo\\addons', 'c:\\users\\thinkpad\\appdata\\local\\openerp s.a\\odoo\\addons\\15.0', 'e:\\odoo\\server\\odoo\\addons'] 
+2023-09-30 20:49:49,659 13984 INFO ? odoo: database: openpg@localhost:5432 
+2023-09-30 20:49:49,828 13984 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at E:\ODOO\thirdparty\wkhtmltopdf.exe 
+2023-09-30 20:49:50,100 13984 INFO ? odoo.service.server: HTTP service (werkzeug) running on DESKTOP-GR2F5KU:8069 
+2023-09-30 20:49:50,129 13984 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:49:50,163 13984 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:49:53,923 13776 INFO ? odoo.http: HTTP Configuring static files 
+2023-09-30 20:49:53,984 13776 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:49:53,984 13776 INFO ? odoo.http: Generating nondb routing 
+2023-09-30 20:49:54,011 13776 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:49:54] "GET / HTTP/1.1" 303 - 0 0.000 0.074
+2023-09-30 20:49:54,049 13776 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:49:54,087 13776 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:49:54,090 13776 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:49:54] "GET /web HTTP/1.1" 303 - 0 0.000 0.075
+2023-09-30 20:49:54,132 13776 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:49:54,324 13776 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:49:54,379 13776 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:49:54] "GET /web/database/selector HTTP/1.1" 200 - 0 0.000 0.284
+2023-09-30 20:50:03,818 13776 INFO ? odoo.service.server: Initiating shutdown 
+2023-09-30 20:50:03,818 13776 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2023-09-30 20:50:04,195 13776 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 0 connections  
+2023-09-30 20:50:12,188 15816 INFO ? odoo: Odoo version 15.0-20230929 
+2023-09-30 20:50:12,188 15816 INFO ? odoo: Using configuration file at E:\ODOO\server\odoo.conf 
+2023-09-30 20:50:12,188 15816 INFO ? odoo: addons paths: ['E:\\ODOO\\server\\odoo\\addons', 'c:\\users\\thinkpad\\appdata\\local\\openerp s.a\\odoo\\addons\\15.0', 'e:\\odoo\\server\\odoo\\addons'] 
+2023-09-30 20:50:12,189 15816 INFO ? odoo: database: openpg@localhost:5432 
+2023-09-30 20:50:12,411 15816 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at E:\ODOO\thirdparty\wkhtmltopdf.exe 
+2023-09-30 20:50:12,745 15816 INFO ? odoo.service.server: HTTP service (werkzeug) running on DESKTOP-GR2F5KU:8069 
+2023-09-30 20:50:12,783 15816 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:50:12,831 15816 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:50:55,118 13984 INFO ? odoo.http: HTTP Configuring static files 
+2023-09-30 20:50:55,192 13984 INFO ? odoo.sql_db: Connection to the database failed 
+2023-09-30 20:50:55,193 13984 INFO ? odoo.http: Generating nondb routing 
+2023-09-30 20:50:55,444 13984 INFO None odoo.service.db: Create database `database`. 
+2023-09-30 20:50:55,492 13984 INFO None odoo.sql_db: Connection to the database failed 
+2023-09-30 20:50:55,493 13984 ERROR None odoo.http: FATAL:  password authentication failed for user "openpg"
+ 
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\http.py", line 141, in dispatch_rpc
+    result = dispatch(method, params)
+  File "E:\ODOO\server\odoo\service\db.py", line 462, in dispatch
+    return g[exp_method_name](*params)
+  File "<decorator-gen-14>", line 2, in exp_create_database
+  File "E:\ODOO\server\odoo\service\db.py", line 41, in if_db_mgt_enabled
+    return method(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\service\db.py", line 130, in exp_create_database
+    _create_empty_database(db_name)
+  File "E:\ODOO\server\odoo\service\db.py", line 99, in _create_empty_database
+    with closing(db.cursor()) as cr:
+  File "E:\ODOO\server\odoo\sql_db.py", line 742, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "E:\ODOO\server\odoo\sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "E:\ODOO\server\odoo\sql_db.py", line 603, in _locked
+    return fun(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\sql_db.py", line 671, in borrow
+    **connection_info)
+  File "E:\ODOO\python\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg"
+
+2023-09-30 20:50:55,645 13984 INFO None odoo.sql_db: Connection to the database failed 
+2023-09-30 20:50:55,722 13984 INFO None werkzeug: 127.0.0.1 - - [30/Sep/2023 20:50:55] "POST /web/database/create HTTP/1.1" 200 - 0 0.000 0.584
+2023-09-30 20:52:27,480 15816 INFO ? odoo.service.server: Initiating shutdown 
+2023-09-30 20:52:27,480 15816 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2023-09-30 20:52:27,794 15816 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 0 connections  
+2023-09-30 20:52:34,531 13984 INFO ? odoo.service.server: Initiating shutdown 
+2023-09-30 20:52:34,531 13984 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2023-09-30 20:52:34,914 13984 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 0 connections  
+2023-09-30 20:52:37,322 15564 INFO ? odoo: Odoo version 15.0-20230929 
+2023-09-30 20:52:37,322 15564 INFO ? odoo: Using configuration file at E:\ODOO\server\odoo.conf 
+2023-09-30 20:52:37,322 15564 INFO ? odoo: addons paths: ['E:\\ODOO\\server\\odoo\\addons', 'c:\\users\\thinkpad\\appdata\\local\\openerp s.a\\odoo\\addons\\15.0', 'e:\\odoo\\server\\odoo\\addons'] 
+2023-09-30 20:52:37,322 15564 INFO ? odoo: database: openpg@localhost:5432 
+2023-09-30 20:52:37,453 15564 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at E:\ODOO\thirdparty\wkhtmltopdf.exe 
+2023-09-30 20:52:37,671 15564 INFO ? odoo.service.server: HTTP service (werkzeug) running on DESKTOP-GR2F5KU:8069 
+2023-09-30 20:52:46,144 4812 INFO ? odoo: Odoo version 15.0-20230929 
+2023-09-30 20:52:46,144 4812 INFO ? odoo: Using configuration file at E:\ODOO\server\odoo.conf 
+2023-09-30 20:52:46,144 4812 INFO ? odoo: addons paths: ['E:\\ODOO\\server\\odoo\\addons', 'c:\\users\\thinkpad\\appdata\\local\\openerp s.a\\odoo\\addons\\15.0', 'e:\\odoo\\server\\odoo\\addons'] 
+2023-09-30 20:52:46,145 4812 INFO ? odoo: database: openpg@localhost:5432 
+2023-09-30 20:52:46,314 4812 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at E:\ODOO\thirdparty\wkhtmltopdf.exe 
+2023-09-30 20:52:46,550 4812 INFO ? odoo.service.server: HTTP service (werkzeug) running on DESKTOP-GR2F5KU:8069 
+2023-09-30 20:53:07,621 15564 INFO ? odoo.http: HTTP Configuring static files 
+2023-09-30 20:53:07,689 15564 INFO ? odoo.http: Generating nondb routing 
+2023-09-30 20:53:07,710 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:53:07] "GET / HTTP/1.1" 303 - 1 0.018 0.060
+2023-09-30 20:53:07,795 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:53:07] "GET /web HTTP/1.1" 303 - 2 0.007 0.075
+2023-09-30 20:53:07,975 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:53:07] "GET /web/database/selector HTTP/1.1" 200 - 2 0.005 0.173
+2023-09-30 20:53:23,627 15564 INFO None odoo.service.db: Create database `database`. 
+2023-09-30 20:53:25,246 15564 INFO database odoo.modules.loading: loading 1 modules... 
+2023-09-30 20:53:25,246 15564 INFO database odoo.modules.loading: Loading module base (1/1) 
+2023-09-30 20:53:25,278 15564 INFO database odoo.modules.registry: module base: creating or updating database tables 
+2023-09-30 20:53:27,279 15564 INFO database odoo.models: Storing computed values of ir.module.module.menus_by_module 
+2023-09-30 20:53:27,279 15564 INFO database odoo.models: Storing computed values of ir.module.module.reports_by_module 
+2023-09-30 20:53:27,279 15564 INFO database odoo.models: Storing computed values of ir.module.module.views_by_module 
+2023-09-30 20:53:27,281 15564 INFO database odoo.models: Storing computed values of res.partner.display_name 
+2023-09-30 20:53:27,281 15564 INFO database odoo.models: Storing computed values of res.partner.partner_share 
+2023-09-30 20:53:27,281 15564 INFO database odoo.models: Storing computed values of res.partner.commercial_partner_id 
+2023-09-30 20:53:27,281 15564 INFO database odoo.models: Storing computed values of res.partner.commercial_company_name 
+2023-09-30 20:53:27,281 15564 INFO database odoo.models: Storing computed values of res.currency.decimal_places 
+2023-09-30 20:53:27,293 15564 INFO database odoo.models: Storing computed values of res.company.logo_web 
+2023-09-30 20:53:27,293 15564 INFO database odoo.models: Storing computed values of res.company.company_registry 
+2023-09-30 20:53:27,299 15564 INFO database odoo.models: Storing computed values of res.users.share 
+2023-09-30 20:53:31,099 15564 INFO database odoo.modules.loading: loading base/data/res_bank.xml 
+2023-09-30 20:53:31,142 15564 INFO database odoo.modules.loading: loading base/data/res.lang.csv 
+2023-09-30 20:53:31,361 15564 INFO database odoo.modules.loading: loading base/data/res_lang_data.xml 
+2023-09-30 20:53:31,425 15564 INFO database odoo.modules.loading: loading base/data/res_partner_data.xml 
+2023-09-30 20:53:31,590 15564 INFO database odoo.modules.loading: loading base/data/res_currency_data.xml 
+2023-09-30 20:53:32,545 15564 INFO database odoo.modules.loading: loading base/data/res_company_data.xml 
+2023-09-30 20:53:32,597 15564 INFO database odoo.modules.loading: loading base/data/res_users_data.xml 
+2023-09-30 20:53:32,862 15564 INFO database odoo.modules.loading: loading base/data/report_paperformat_data.xml 
+2023-09-30 20:53:32,908 15564 INFO database odoo.modules.loading: loading base/data/res_country_data.xml 
+2023-09-30 20:53:33,828 15564 INFO database odoo.modules.loading: loading base/data/ir_demo_data.xml 
+2023-09-30 20:53:33,860 15564 INFO database odoo.modules.loading: loading base/data/ir_config_parameter_data.xml 
+2023-09-30 20:53:33,879 15564 INFO database odoo.modules.loading: loading base/security/base_groups.xml 
+2023-09-30 20:53:34,122 15564 INFO database odoo.modules.loading: loading base/security/base_security.xml 
+2023-09-30 20:53:34,625 15564 INFO database odoo.modules.loading: loading base/views/base_menus.xml 
+2023-09-30 20:53:34,864 15564 INFO database odoo.modules.loading: loading base/views/decimal_precision_views.xml 
+2023-09-30 20:53:34,929 15564 INFO database odoo.modules.loading: loading base/views/res_config_views.xml 
+2023-09-30 20:53:34,960 15564 INFO database odoo.modules.loading: loading base/data/res.country.state.csv 
+2023-09-30 20:53:36,739 15564 INFO database odoo.modules.loading: loading base/views/ir_actions_views.xml 
+2023-09-30 20:53:36,976 15564 INFO database odoo.modules.loading: loading base/views/ir_asset_views.xml 
+2023-09-30 20:53:37,026 15564 INFO database odoo.modules.loading: loading base/views/ir_config_parameter_views.xml 
+2023-09-30 20:53:37,070 15564 INFO database odoo.modules.loading: loading base/views/ir_cron_views.xml 
+2023-09-30 20:53:37,141 15564 INFO database odoo.modules.loading: loading base/views/ir_cron_trigger_views.xml 
+2023-09-30 20:53:37,181 15564 INFO database odoo.modules.loading: loading base/views/ir_filters_views.xml 
+2023-09-30 20:53:37,227 15564 INFO database odoo.modules.loading: loading base/views/ir_mail_server_views.xml 
+2023-09-30 20:53:37,273 15564 INFO database odoo.modules.loading: loading base/views/ir_model_views.xml 
+2023-09-30 20:53:37,528 15564 INFO database odoo.modules.loading: loading base/views/ir_attachment_views.xml 
+2023-09-30 20:53:37,578 15564 INFO database odoo.modules.loading: loading base/views/ir_rule_views.xml 
+2023-09-30 20:53:37,631 15564 INFO database odoo.modules.loading: loading base/views/ir_sequence_views.xml 
+2023-09-30 20:53:37,678 15564 INFO database odoo.modules.loading: loading base/views/ir_translation_views.xml 
+2023-09-30 20:53:37,740 15564 INFO database odoo.modules.loading: loading base/views/ir_ui_menu_views.xml 
+2023-09-30 20:53:37,791 15564 INFO database odoo.modules.loading: loading base/views/ir_ui_view_views.xml 
+2023-09-30 20:53:37,878 15564 INFO database odoo.modules.loading: loading base/views/ir_default_views.xml 
+2023-09-30 20:53:37,926 15564 INFO database odoo.modules.loading: loading base/data/ir_cron_data.xml 
+2023-09-30 20:53:37,944 15564 INFO database odoo.modules.loading: loading base/report/ir_model_report.xml 
+2023-09-30 20:53:37,962 15564 INFO database odoo.modules.loading: loading base/report/ir_model_templates.xml 
+2023-09-30 20:53:37,982 15564 INFO database odoo.modules.loading: loading base/views/ir_logging_views.xml 
+2023-09-30 20:53:38,033 15564 INFO database odoo.modules.loading: loading base/views/ir_qweb_widget_templates.xml 
+2023-09-30 20:53:38,062 15564 INFO database odoo.modules.loading: loading base/views/ir_module_views.xml 
+2023-09-30 20:53:38,230 15564 INFO database odoo.modules.loading: loading base/data/ir_module_category_data.xml 
+2023-09-30 20:53:38,387 15564 INFO database odoo.modules.loading: loading base/data/ir_module_module.xml 
+2023-09-30 20:53:38,519 15564 INFO database odoo.modules.loading: loading base/report/ir_module_reports.xml 
+2023-09-30 20:53:38,532 15564 INFO database odoo.modules.loading: loading base/report/ir_module_report_templates.xml 
+2023-09-30 20:53:38,557 15564 INFO database odoo.modules.loading: loading base/wizard/base_module_update_views.xml 
+2023-09-30 20:53:38,587 15564 INFO database odoo.modules.loading: loading base/wizard/base_language_install_views.xml 
+2023-09-30 20:53:38,613 15564 INFO database odoo.modules.loading: loading base/wizard/base_import_language_views.xml 
+2023-09-30 20:53:38,645 15564 INFO database odoo.modules.loading: loading base/wizard/base_module_upgrade_views.xml 
+2023-09-30 20:53:38,691 15564 INFO database odoo.modules.loading: loading base/wizard/base_module_uninstall_views.xml 
+2023-09-30 20:53:38,710 15564 INFO database odoo.modules.loading: loading base/wizard/base_export_language_views.xml 
+2023-09-30 20:53:38,746 15564 INFO database odoo.modules.loading: loading base/wizard/base_update_translations_views.xml 
+2023-09-30 20:53:38,775 15564 INFO database odoo.modules.loading: loading base/wizard/base_partner_merge_views.xml 
+2023-09-30 20:53:38,807 15564 INFO database odoo.modules.loading: loading base/data/ir_actions_data.xml 
+2023-09-30 20:53:38,823 15564 INFO database odoo.modules.loading: loading base/data/ir_demo_failure_data.xml 
+2023-09-30 20:53:38,854 15564 INFO database odoo.modules.loading: loading base/views/ir_profile_views.xml 
+2023-09-30 20:53:38,905 15564 INFO database odoo.modules.loading: loading base/views/res_company_views.xml 
+2023-09-30 20:53:38,954 15564 INFO database odoo.modules.loading: loading base/views/res_lang_views.xml 
+2023-09-30 20:53:39,005 15564 INFO database odoo.modules.loading: loading base/views/res_partner_views.xml 
+2023-09-30 20:53:39,206 15564 INFO database odoo.modules.loading: loading base/views/res_bank_views.xml 
+2023-09-30 20:53:39,267 15564 INFO database odoo.modules.loading: loading base/views/res_country_views.xml 
+2023-09-30 20:53:39,354 15564 INFO database odoo.modules.loading: loading base/views/res_currency_views.xml 
+2023-09-30 20:53:39,438 15564 INFO database odoo.modules.loading: loading base/views/res_users_views.xml 
+2023-09-30 20:53:39,698 15564 INFO database odoo.modules.loading: loading base/views/ir_property_views.xml 
+2023-09-30 20:53:39,748 15564 INFO database odoo.modules.loading: loading base/views/res_config_settings_views.xml 
+2023-09-30 20:53:39,775 15564 INFO database odoo.modules.loading: loading base/views/report_paperformat_views.xml 
+2023-09-30 20:53:39,841 15564 INFO database odoo.modules.loading: loading base/views/onboarding_views.xml 
+2023-09-30 20:53:39,913 15564 INFO database odoo.modules.loading: loading base/security/ir.model.access.csv 
+2023-09-30 20:53:40,492 15564 INFO database odoo.modules.loading: Module base loaded in 15.25s, 9647 queries 
+2023-09-30 20:53:40,492 15564 INFO database odoo.modules.loading: 1 modules loaded in 15.25s, 9647 queries (+0 extra) 
+2023-09-30 20:53:40,687 15564 INFO database odoo.modules.loading: updating modules list 
+2023-09-30 20:53:40,688 15564 INFO database odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via 127.0.0.1 
+2023-09-30 20:53:43,061 15564 INFO database odoo.modules.loading: loading 7 modules... 
+2023-09-30 20:53:43,062 15564 INFO database odoo.modules.loading: Loading module web (2/7) 
+2023-09-30 20:53:43,176 15564 INFO database odoo.modules.registry: module web: creating or updating database tables 
+2023-09-30 20:53:44,367 15564 INFO database odoo.modules.loading: loading web/security/ir.model.access.csv 
+2023-09-30 20:53:44,423 15564 INFO database odoo.modules.loading: loading web/views/webclient_templates.xml 
+2023-09-30 20:53:44,553 15564 INFO database odoo.modules.loading: loading web/views/report_templates.xml 
+2023-09-30 20:53:44,728 15564 INFO database odoo.modules.loading: loading web/views/base_document_layout_views.xml 
+2023-09-30 20:53:44,760 15564 INFO database odoo.modules.loading: loading web/views/speedscope_template.xml 
+2023-09-30 20:53:44,773 15564 INFO database odoo.modules.loading: loading web/views/lazy_assets.xml 
+2023-09-30 20:53:44,786 15564 INFO database odoo.modules.loading: loading web/data/report_layout.xml 
+2023-09-30 20:53:44,890 15564 INFO database odoo.modules.loading: Module web loaded in 1.83s, 886 queries 
+2023-09-30 20:53:44,890 15564 INFO database odoo.modules.loading: Loading module auth_totp (3/7) 
+2023-09-30 20:53:45,163 15564 INFO database odoo.modules.registry: module auth_totp: creating or updating database tables 
+2023-09-30 20:53:45,300 15564 INFO database odoo.modules.loading: loading auth_totp/security/security.xml 
+2023-09-30 20:53:45,363 15564 INFO database odoo.modules.loading: loading auth_totp/security/ir.model.access.csv 
+2023-09-30 20:53:45,394 15564 INFO database odoo.modules.loading: loading auth_totp/data/ir_action_data.xml 
+2023-09-30 20:53:45,413 15564 INFO database odoo.modules.loading: loading auth_totp/views/res_users_views.xml 
+2023-09-30 20:53:45,463 15564 INFO database odoo.modules.loading: loading auth_totp/views/templates.xml 
+2023-09-30 20:53:45,486 15564 INFO database odoo.modules.loading: loading auth_totp/wizard/auth_totp_wizard_views.xml 
+2023-09-30 20:53:45,523 15564 INFO database odoo.modules.loading: Module auth_totp loaded in 0.63s, 192 queries 
+2023-09-30 20:53:45,524 15564 INFO database odoo.modules.loading: Loading module base_import (4/7) 
+2023-09-30 20:53:45,657 15564 INFO database odoo.modules.registry: module base_import: creating or updating database tables 
+2023-09-30 20:53:46,768 15564 INFO database odoo.modules.loading: loading base_import/security/ir.model.access.csv 
+2023-09-30 20:53:46,842 15564 INFO database odoo.modules.loading: Module base_import loaded in 1.32s, 920 queries 
+2023-09-30 20:53:46,842 15564 INFO database odoo.modules.loading: Loading module web_editor (5/7) 
+2023-09-30 20:53:47,095 15564 INFO database odoo.modules.registry: module web_editor: creating or updating database tables 
+2023-09-30 20:53:47,300 15564 INFO database odoo.modules.loading: loading web_editor/security/ir.model.access.csv 
+2023-09-30 20:53:47,313 15564 INFO database odoo.modules.loading: loading web_editor/data/editor_assets.xml 
+2023-09-30 20:53:47,321 15564 INFO database odoo.modules.loading: loading web_editor/views/editor.xml 
+2023-09-30 20:53:47,354 15564 INFO database odoo.modules.loading: loading web_editor/views/snippets.xml 
+2023-09-30 20:53:47,420 15564 INFO database odoo.modules.loading: Module web_editor loaded in 0.58s, 245 queries 
+2023-09-30 20:53:47,421 15564 INFO database odoo.modules.loading: Loading module web_kanban_gauge (6/7) 
+2023-09-30 20:53:47,542 15564 INFO database odoo.modules.loading: Module web_kanban_gauge loaded in 0.12s, 18 queries 
+2023-09-30 20:53:47,542 15564 INFO database odoo.modules.loading: Loading module web_tour (7/7) 
+2023-09-30 20:53:47,606 15564 INFO database odoo.modules.registry: module web_tour: creating or updating database tables 
+2023-09-30 20:53:47,675 15564 INFO database odoo.modules.loading: loading web_tour/security/ir.model.access.csv 
+2023-09-30 20:53:47,694 15564 INFO database odoo.modules.loading: loading web_tour/security/ir.rule.csv 
+2023-09-30 20:53:47,710 15564 INFO database odoo.modules.loading: loading web_tour/views/tour_views.xml 
+2023-09-30 20:53:47,757 15564 INFO database odoo.modules.loading: Module web_tour loaded in 0.21s, 116 queries 
+2023-09-30 20:53:47,758 15564 INFO database odoo.modules.loading: 7 modules loaded in 4.70s, 2377 queries (+0 extra) 
+2023-09-30 20:53:48,106 15564 INFO database odoo.modules.loading: Modules loaded. 
+2023-09-30 20:53:48,108 15564 INFO database odoo.modules.registry: Registry loaded in 22.877s 
+2023-09-30 20:53:48,240 15564 INFO database odoo.addons.base.models.res_users: Login successful for db:database login:admin from 127.0.0.1 
+2023-09-30 20:53:48,261 15564 INFO database odoo.modules.registry: Registry changed, signaling through the database 
+2023-09-30 20:53:48,325 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:53:48] "POST /web/database/create HTTP/1.1" 303 - 16617 13.440 11.387
+2023-09-30 20:53:48,343 15564 INFO database odoo.addons.base.models.ir_http: Generating routing map for key None 
+2023-09-30 20:54:10,891 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:10] "GET /web HTTP/1.1" 200 - 179 0.159 22.402
+2023-09-30 20:54:11,092 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:11] "GET /web/assets/13-ca2837b/web.assets_common.min.css HTTP/1.1" 200 - 2 0.005 0.170
+2023-09-30 20:54:11,111 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:11] "GET /web/webclient/load_menus/1f5717edb4e7bec8acddc90b224f148fb9c759c1c5c867ed74b93ffc796e8f1b HTTP/1.1" 200 - 1 0.001 0.181
+2023-09-30 20:54:11,155 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:11] "GET /web/assets/14-c9f282a/web.assets_backend.min.css HTTP/1.1" 200 - 2 0.001 0.228
+2023-09-30 20:54:11,162 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:11] "GET /web/webclient/translations/5227498d9df4b403b0244c75aac21e0c091e50ce?lang=en_US HTTP/1.1" 200 - 4 0.049 0.176
+2023-09-30 20:54:11,359 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:11] "GET /web/assets/17-ba0d49e/web.assets_backend_prod_only.min.js HTTP/1.1" 200 - 2 0.012 0.037
+2023-09-30 20:54:11,409 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:11] "GET /web/webclient/qweb/17dcc432f38f369edd13fd644f3120b56b51b7063f8e6eda955a6045790e60f3?bundle=web.assets_qweb HTTP/1.1" 200 - 2 0.007 0.467
+2023-09-30 20:54:11,757 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:11] "GET /web/assets/15-ca2837b/web.assets_common.min.js HTTP/1.1" 200 - 2 0.010 0.820
+2023-09-30 20:54:11,862 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:11] "GET /web/assets/16-c9f282a/web.assets_backend.min.js HTTP/1.1" 200 - 2 0.031 0.720
+2023-09-30 20:54:12,445 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:12] "GET /web/webclient/locale/en_US HTTP/1.1" 200 - 1 0.000 0.005
+2023-09-30 20:54:12,619 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:12] "POST /web/action/load HTTP/1.1" 200 - 28 0.044 0.047
+2023-09-30 20:54:12,633 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:12] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 200 - 16 0.078 0.029
+2023-09-30 20:54:12,639 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:12] "GET /web/image/res.company/1/favicon HTTP/1.1" 200 - 11 0.067 0.030
+2023-09-30 20:54:12,788 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:12] "POST /web/dataset/call_kw/ir.module.module/load_views HTTP/1.1" 200 - 58 0.092 0.055
+2023-09-30 20:54:12,871 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:12] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 42 0.040 0.015
+2023-09-30 20:54:12,907 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:12] "POST /web/dataset/search_read HTTP/1.1" 200 - 3 0.014 0.009
+2023-09-30 20:54:13,022 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /sale_management/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,023 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /account/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,024 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /website/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,025 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /crm/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,034 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /stock/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,035 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/mrp_workorder.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,046 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/account_accountant.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,049 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /website_sale/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,050 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /purchase/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,052 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /point_of_sale/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,054 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /project/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,059 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /mrp/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,066 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /mass_mailing/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,073 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /hr_expense/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,075 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/timesheet_grid.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,076 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/web_studio.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,077 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /hr_holidays/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,084 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /hr_recruitment/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,088 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/industry_fsm.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,094 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /hr/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,101 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /maintenance/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,106 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/sign.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,107 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/sale_subscription.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,110 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/helpdesk.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,110 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /website_slides/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,117 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/quality_control.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,119 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /website_event/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,125 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/planning.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,134 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /mail/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,135 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /contacts/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,138 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/mrp_plm.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,139 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /calendar/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,143 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/hr_appraisal.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,144 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /fleet/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,151 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /website_blog/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,155 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/marketing_automation.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,172 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /im_livechat/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,174 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/appointment.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,174 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /survey/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,175 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/web_mobile.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,185 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /board/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,189 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /repair/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,196 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /website_forum/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,196 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /hr_attendance/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,198 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /mass_mailing_sms/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,201 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/stock_barcode.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,203 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /note/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,209 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /hr_skills/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,215 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /website_hr_recruitment/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,224 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /lunch/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,225 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/voip.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,243 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /hr_contract/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,253 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /payment_adyen/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,277 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /payment_alipay/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,279 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /base/static/img/icons/sale_ebay.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,295 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /payment_authorize/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,299 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /payment_buckaroo/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,304 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /payment_mollie/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,319 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /payment_ogone/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,323 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /payment_paypal/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,327 15564 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /web/image/res.company/1/favicon HTTP/1.1" 200 - 4 0.006 0.023
+2023-09-30 20:54:13,330 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /payment_payulatam/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,335 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /payment_payumoney/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,338 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /payment_stripe/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:54:13,349 15564 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:54:13] "GET /payment_sips/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:02,566 8120 INFO ? odoo: Odoo version 15.0-20230929 
+2023-09-30 20:55:02,567 8120 INFO ? odoo: Using configuration file at E:\ODOO\server\odoo.conf 
+2023-09-30 20:55:02,567 8120 INFO ? odoo: addons paths: ['E:\\ODOO\\server\\odoo\\addons', 'c:\\users\\thinkpad\\appdata\\local\\openerp s.a\\odoo\\addons\\15.0', 'e:\\odoo\\server\\odoo\\addons'] 
+2023-09-30 20:55:02,567 8120 INFO ? odoo: database: openpg@localhost:5432 
+2023-09-30 20:55:02,742 8120 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at E:\ODOO\thirdparty\wkhtmltopdf.exe 
+2023-09-30 20:55:03,046 8120 INFO ? odoo.service.server: HTTP service (werkzeug) running on DESKTOP-GR2F5KU:8072 
+2023-09-30 20:55:07,393 8120 INFO ? odoo.http: HTTP Configuring static files 
+2023-09-30 20:55:07,464 8120 INFO odoo odoo.sql_db: Connection to the database failed 
+2023-09-30 20:55:07,464 8120 INFO odoo odoo.http: Generating nondb routing 
+2023-09-30 20:55:07,491 8120 INFO odoo werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:07] "GET /web/database/create HTTP/1.1" 405 - 0 0.000 0.087
+2023-09-30 20:55:07,737 8120 INFO database odoo.modules.loading: loading 1 modules... 
+2023-09-30 20:55:07,743 8120 INFO database odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2023-09-30 20:55:07,752 8120 INFO database odoo.modules.loading: loading 7 modules... 
+2023-09-30 20:55:07,814 8120 INFO database odoo.modules.loading: 7 modules loaded in 0.06s, 0 queries (+0 extra) 
+2023-09-30 20:55:07,848 8120 INFO database odoo.modules.loading: Modules loaded. 
+2023-09-30 20:55:07,852 8120 INFO database odoo.modules.registry: Registry loaded in 0.170s 
+2023-09-30 20:55:07,853 8120 INFO database odoo.addons.base.models.ir_http: Generating routing map for key None 
+2023-09-30 20:55:07,954 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:07] "GET /favicon.ico HTTP/1.1" 404 - 18 0.033 0.382
+2023-09-30 20:55:11,115 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:11] "GET / HTTP/1.1" 303 - 2 0.003 0.044
+2023-09-30 20:55:11,402 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:11] "GET /web HTTP/1.1" 303 - 1 0.001 0.016
+2023-09-30 20:55:18,914 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:18] "GET /web/login HTTP/1.1" 200 - 97 0.098 7.101
+2023-09-30 20:55:19,248 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:19] "GET /web/static/lib/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 - - - -
+2023-09-30 20:55:19,305 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:19] "GET /web/assets/13-ca2837b/web.assets_common.min.css HTTP/1.1" 200 - 5 0.003 0.063
+2023-09-30 20:55:19,323 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:19] "GET /web/assets/18-b5c38a8/web.assets_frontend.min.css HTTP/1.1" 200 - 3 0.010 0.073
+2023-09-30 20:55:19,514 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:19] "GET /web/assets/19-fab85d7/web.assets_common_minimal.min.js HTTP/1.1" 200 - 3 0.002 0.025
+2023-09-30 20:55:19,636 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:19] "GET /web/assets/20-e25539a/web.assets_frontend_minimal.min.js HTTP/1.1" 200 - 3 0.002 0.019
+2023-09-30 20:55:19,650 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:19] "GET /web/binary/company_logo HTTP/1.1" 200 - 2 0.007 0.003
+2023-09-30 20:55:20,033 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:20] "GET /web/assets/21-6c6a5e7/web.assets_common_lazy.min.js HTTP/1.1" 200 - 3 0.000 0.330
+2023-09-30 20:55:20,588 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:20] "GET /web/assets/22-80def12/web.assets_frontend_lazy.min.js HTTP/1.1" 200 - 3 0.000 0.085
+2023-09-30 20:55:20,667 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:20] "GET / HTTP/1.1" 303 - 2 0.005 0.065
+2023-09-30 20:55:20,789 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:20] "GET /web/webclient/translations/1696107320654 HTTP/1.1" 200 - 7 0.014 0.007
+2023-09-30 20:55:20,874 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:20] "GET /web HTTP/1.1" 303 - 1 0.002 0.011
+2023-09-30 20:55:21,035 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:21] "GET /web/webclient/qweb/1696107320794?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.004 0.061
+2023-09-30 20:55:21,049 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:21] "GET /web/login HTTP/1.1" 200 - 5 0.005 0.061
+2023-09-30 20:55:21,117 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:21] "GET /web/webclient/translations/1696107321042 HTTP/1.1" 200 - 4 0.004 0.005
+2023-09-30 20:55:21,199 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:21] "GET /web/assets/13-ca2837b/web.assets_common.min.css HTTP/1.1" 200 - 3 0.001 0.011
+2023-09-30 20:55:21,391 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:21] "GET /web/static/lib/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 - - - -
+2023-09-30 20:55:21,401 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:21] "GET /web/assets/18-b5c38a8/web.assets_frontend.min.css HTTP/1.1" 200 - 3 0.002 0.012
+2023-09-30 20:55:21,416 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:21] "GET /web/assets/19-fab85d7/web.assets_common_minimal.min.js HTTP/1.1" 200 - 3 0.001 0.010
+2023-09-30 20:55:21,724 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:21] "GET /web/assets/20-e25539a/web.assets_frontend_minimal.min.js HTTP/1.1" 200 - 3 0.003 0.006
+2023-09-30 20:55:21,756 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:21] "GET /web/binary/company_logo HTTP/1.1" 200 - 2 0.003 0.005
+2023-09-30 20:55:22,075 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:22] "GET /web/static/img/favicon.ico HTTP/1.1" 200 - - - -
+2023-09-30 20:55:22,097 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:22] "GET /web/assets/21-6c6a5e7/web.assets_common_lazy.min.js HTTP/1.1" 200 - 3 0.002 0.022
+2023-09-30 20:55:22,347 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:22] "GET /web/assets/22-80def12/web.assets_frontend_lazy.min.js HTTP/1.1" 200 - 3 0.001 0.008
+2023-09-30 20:55:22,500 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:22] "GET /web/webclient/translations/1696107322373 HTTP/1.1" 200 - 4 0.002 0.007
+2023-09-30 20:55:22,751 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:22] "GET /web/webclient/qweb/1696107322502?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.004 0.051
+2023-09-30 20:55:22,825 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:22] "GET /web/webclient/translations/1696107322755 HTTP/1.1" 200 - 4 0.001 0.006
+2023-09-30 20:55:26,506 8120 INFO database odoo.addons.base.models.res_users: Login successful for db:database login:admin from 127.0.0.1 
+2023-09-30 20:55:26,536 8120 INFO database odoo.modules.registry: At least one model cache has been invalidated, signaling through the database. 
+2023-09-30 20:55:26,538 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:26] "POST /web/login HTTP/1.1" 303 - 53 0.068 0.104
+2023-09-30 20:55:27,068 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:27] "GET /web HTTP/1.1" 200 - 161 0.101 0.351
+2023-09-30 20:55:27,112 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:27] "GET /web/assets/14-c9f282a/web.assets_backend.min.css HTTP/1.1" 200 - 2 0.001 0.021
+2023-09-30 20:55:27,569 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:27] "GET /web/assets/17-ba0d49e/web.assets_backend_prod_only.min.js HTTP/1.1" 200 - 2 0.007 0.148
+2023-09-30 20:55:27,570 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:27] "GET /web/assets/16-c9f282a/web.assets_backend.min.js HTTP/1.1" 200 - 2 0.005 0.153
+2023-09-30 20:55:27,593 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:27] "GET /web/webclient/load_menus/1f5717edb4e7bec8acddc90b224f148fb9c759c1c5c867ed74b93ffc796e8f1b HTTP/1.1" 200 - 1 0.002 0.174
+2023-09-30 20:55:27,596 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:27] "GET /web/assets/15-ca2837b/web.assets_common.min.js HTTP/1.1" 200 - 2 0.007 0.179
+2023-09-30 20:55:27,597 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:27] "GET /web/webclient/translations/5227498d9df4b403b0244c75aac21e0c091e50ce?lang=en_US HTTP/1.1" 200 - 4 0.024 0.088
+2023-09-30 20:55:27,674 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:27] "GET /web/webclient/qweb/17dcc432f38f369edd13fd644f3120b56b51b7063f8e6eda955a6045790e60f3?bundle=web.assets_qweb HTTP/1.1" 200 - 2 0.004 0.251
+2023-09-30 20:55:28,124 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:28] "GET /web/webclient/locale/en_US HTTP/1.1" 200 - 1 0.000 0.004
+2023-09-30 20:55:28,445 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:28] "POST /web/action/load HTTP/1.1" 200 - 28 0.039 0.019
+2023-09-30 20:55:28,518 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:28] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 200 - 16 0.017 0.018
+2023-09-30 20:55:28,522 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:28] "GET /web/image/res.company/1/favicon HTTP/1.1" 200 - 11 0.032 0.010
+2023-09-30 20:55:28,595 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:28] "POST /web/dataset/call_kw/ir.module.module/load_views HTTP/1.1" 200 - 58 0.075 0.040
+2023-09-30 20:55:28,782 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:28] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 42 0.017 0.009
+2023-09-30 20:55:28,922 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:28] "POST /web/dataset/search_read HTTP/1.1" 200 - 3 0.003 0.007
+2023-09-30 20:55:29,099 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /mass_mailing/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,295 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /point_of_sale/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,295 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /base/static/img/icons/account_accountant.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,295 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /base/static/img/icons/web_studio.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,296 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /base/static/img/icons/sale_subscription.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,298 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /hr_holidays/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,411 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /hr_expense/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,618 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /maintenance/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,620 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /base/static/img/icons/industry_fsm.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,621 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /project/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,622 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /base/static/img/icons/timesheet_grid.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,624 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /hr_recruitment/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,721 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /base/static/img/icons/helpdesk.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,943 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /website_sale/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,945 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /base/static/img/icons/sign.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,950 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /purchase/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,951 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /hr/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:29,952 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:29] "GET /mrp/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,040 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /web/image/res.company/1/favicon HTTP/1.1" 200 - 4 0.002 0.006
+2023-09-30 20:55:30,256 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /sale_management/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,258 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /account/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,287 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /crm/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,288 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /base/static/img/icons/mrp_workorder.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,288 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /website/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,347 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /stock/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,569 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /base/static/img/icons/quality_control.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,570 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /website_slides/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,602 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /base/static/img/icons/planning.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,603 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /website_event/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,604 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /mail/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,664 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /contacts/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,883 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /base/static/img/icons/mrp_plm.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,884 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /calendar/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,914 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /base/static/img/icons/hr_appraisal.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,917 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /fleet/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,918 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /base/static/img/icons/marketing_automation.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:30,974 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:30] "GET /website_blog/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,190 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /im_livechat/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,191 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /base/static/img/icons/appointment.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,223 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /survey/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,223 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /board/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,223 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /base/static/img/icons/web_mobile.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,284 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /repair/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,505 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /hr_attendance/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,506 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /mass_mailing_sms/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,536 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /base/static/img/icons/stock_barcode.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,538 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /note/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,538 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /website_forum/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,598 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /hr_skills/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,823 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /base/static/img/icons/voip.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,824 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /lunch/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,852 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /website_hr_recruitment/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,853 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /base/static/img/icons/sale_ebay.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,854 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /hr_contract/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:31,914 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:31] "GET /payment_adyen/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:32,133 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:32] "GET /payment_alipay/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:32,133 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:32] "GET /payment_authorize/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:32,164 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:32] "GET /payment_buckaroo/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:32,165 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:32] "GET /payment_mollie/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:32,166 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:32] "GET /payment_ogone/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:32,226 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:32] "GET /payment_paypal/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:32,446 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:32] "GET /payment_payulatam/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:32,446 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:32] "GET /payment_payumoney/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:32,474 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:32] "GET /payment_stripe/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:55:32,474 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:55:32] "GET /payment_sips/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:56:03,106 8120 INFO database odoo.addons.base.models.ir_cron: Starting job `Base: Auto-vacuum internal data`. 
+2023-09-30 20:56:03,156 8120 INFO database odoo.addons.base.models.ir_attachment: filestore gc 20 checked, 0 removed 
+2023-09-30 20:56:03,215 8120 INFO database odoo.addons.base.models.res_users: GC'd 1 user log entries 
+2023-09-30 20:56:03,242 8120 INFO database odoo.addons.auth_totp.models.auth_totp: GC'd 0 totp devices entries 
+2023-09-30 20:56:03,254 8120 INFO database odoo.addons.base.models.ir_cron: Job `Base: Auto-vacuum internal data` done. 
+2023-09-30 20:58:30,848 8120 INFO database odoo.addons.base.models.res_users: Login failed for db:database login:admin@gmail.com from 127.0.0.1 
+2023-09-30 20:58:31,223 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:31] "POST /web/login HTTP/1.1" 200 - 67 0.055 0.394
+2023-09-30 20:58:31,425 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:31] "GET /web/webclient/translations/1696107511389 HTTP/1.1" 200 - 8 0.026 0.007
+2023-09-30 20:58:31,481 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:31] "GET /web/webclient/qweb/1696107511428?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.005 0.048
+2023-09-30 20:58:31,814 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:31] "GET /web/webclient/translations/1696107511489 HTTP/1.1" 200 - 4 0.004 0.008
+2023-09-30 20:58:35,558 8120 INFO database odoo.addons.base.models.res_users: Login successful for db:database login:admin from 127.0.0.1 
+2023-09-30 20:58:35,572 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:35] "POST /web/login HTTP/1.1" 303 - 29 0.023 0.113
+2023-09-30 20:58:35,888 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:35] "GET /web HTTP/1.1" 200 - 12 0.018 0.101
+2023-09-30 20:58:36,343 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:36] "GET /web/assets/14-c9f282a/web.assets_backend.min.css HTTP/1.1" 200 - 2 0.004 0.116
+2023-09-30 20:58:36,347 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:36] "GET /web/webclient/load_menus/1f5717edb4e7bec8acddc90b224f148fb9c759c1c5c867ed74b93ffc796e8f1b HTTP/1.1" 200 - 1 0.002 0.114
+2023-09-30 20:58:36,347 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:36] "GET /web/assets/15-ca2837b/web.assets_common.min.js HTTP/1.1" 200 - 2 0.004 0.125
+2023-09-30 20:58:36,348 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:36] "GET /web/assets/16-c9f282a/web.assets_backend.min.js HTTP/1.1" 200 - 2 0.005 0.122
+2023-09-30 20:58:36,350 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:36] "GET /web/assets/17-ba0d49e/web.assets_backend_prod_only.min.js HTTP/1.1" 200 - 2 0.069 0.053
+2023-09-30 20:58:36,448 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:36] "GET /web/webclient/qweb/17dcc432f38f369edd13fd644f3120b56b51b7063f8e6eda955a6045790e60f3?bundle=web.assets_qweb HTTP/1.1" 200 - 2 0.006 0.204
+2023-09-30 20:58:36,680 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:36] "GET /web/webclient/translations/5227498d9df4b403b0244c75aac21e0c091e50ce?lang=en_US HTTP/1.1" 200 - 3 0.011 0.007
+2023-09-30 20:58:37,013 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:37] "GET /web/webclient/locale/en_US HTTP/1.1" 200 - 1 0.001 0.005
+2023-09-30 20:58:37,329 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:37] "POST /web/action/load HTTP/1.1" 200 - 14 0.038 0.020
+2023-09-30 20:58:37,411 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:37] "GET /web/image/res.company/1/favicon HTTP/1.1" 200 - 4 0.007 0.011
+2023-09-30 20:58:37,431 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:37] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 200 - 5 0.009 0.012
+2023-09-30 20:58:37,474 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:37] "POST /web/dataset/call_kw/ir.module.module/load_views HTTP/1.1" 200 - 23 0.040 0.039
+2023-09-30 20:58:37,706 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:37] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 37 0.037 0.028
+2023-09-30 20:58:37,812 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:37] "POST /web/dataset/search_read HTTP/1.1" 200 - 3 0.005 0.009
+2023-09-30 20:58:38,015 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /point_of_sale/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,211 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /mrp/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,212 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /base/static/img/icons/account_accountant.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,213 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /purchase/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,213 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /project/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,214 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /website_sale/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,326 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /sale_management/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,529 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /account/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,529 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /crm/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,531 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /base/static/img/icons/mrp_workorder.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,535 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /website/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,539 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /stock/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,637 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /mass_mailing/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,859 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /hr_expense/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,861 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /base/static/img/icons/timesheet_grid.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,864 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /base/static/img/icons/web_studio.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,865 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /hr_holidays/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,866 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /hr_recruitment/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:38,945 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:38] "GET /base/static/img/icons/industry_fsm.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,182 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /hr/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,185 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /base/static/img/icons/sign.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,188 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /maintenance/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,189 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /base/static/img/icons/sale_subscription.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,191 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /base/static/img/icons/helpdesk.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,257 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /base/static/img/icons/quality_control.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,513 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /base/static/img/icons/planning.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,513 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /website_slides/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,514 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /website_event/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,518 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /contacts/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,519 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /mail/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,563 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /base/static/img/icons/mrp_plm.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,829 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /base/static/img/icons/hr_appraisal.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,829 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /calendar/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,832 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /fleet/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,834 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /base/static/img/icons/marketing_automation.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,837 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /website_blog/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:39,873 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:39] "GET /im_livechat/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,142 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /base/static/img/icons/appointment.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,143 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /survey/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,148 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /base/static/img/icons/web_mobile.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,150 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /repair/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,151 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /board/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,183 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /hr_attendance/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,472 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /base/static/img/icons/stock_barcode.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,474 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /mass_mailing_sms/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,474 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /note/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,478 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /website_forum/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,479 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /hr_skills/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,496 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /base/static/img/icons/voip.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,795 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /website_hr_recruitment/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,796 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /lunch/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,798 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /base/static/img/icons/sale_ebay.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,801 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /hr_contract/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,805 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /payment_adyen/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:40,806 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:40] "GET /payment_alipay/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:41,125 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:41] "GET /payment_authorize/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:41,127 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:41] "GET /payment_buckaroo/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:41,127 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:41] "GET /payment_mollie/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:41,128 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:41] "GET /payment_ogone/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:41,131 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:41] "GET /payment_payulatam/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:41,133 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:41] "GET /payment_paypal/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:41,440 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:41] "GET /payment_payumoney/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:41,441 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:41] "GET /payment_stripe/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:41,444 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:41] "GET /payment_sips/static/description/icon.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:43,213 8120 INFO database odoo.addons.base.models.ir_module: ALLOW access to module.button_immediate_install on ['Sales'] to user admin #2 via 127.0.0.1 
+2023-09-30 20:58:43,213 8120 INFO database odoo.addons.base.models.ir_module: User #2 triggered module installation 
+2023-09-30 20:58:43,215 8120 INFO database odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['Sales'] to user admin #2 via 127.0.0.1 
+2023-09-30 20:58:43,563 8120 INFO database odoo.modules.loading: loading 1 modules... 
+2023-09-30 20:58:43,577 8120 INFO database odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2023-09-30 20:58:43,618 8120 INFO database odoo.modules.loading: updating modules list 
+2023-09-30 20:58:43,619 8120 INFO database odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via 127.0.0.1 
+2023-09-30 20:58:45,040 8120 INFO database odoo.modules.loading: loading 7 modules... 
+2023-09-30 20:58:45,048 8120 INFO database odoo.modules.loading: 7 modules loaded in 0.01s, 0 queries (+0 extra) 
+2023-09-30 20:58:45,081 8120 INFO database odoo.modules.loading: loading 40 modules... 
+2023-09-30 20:58:45,081 8120 INFO database odoo.modules.loading: Loading module uom (2/40) 
+2023-09-30 20:58:45,208 8120 INFO database odoo.modules.registry: module uom: creating or updating database tables 
+2023-09-30 20:58:45,490 8120 INFO database odoo.modules.loading: loading uom/data/uom_data.xml 
+2023-09-30 20:58:45,577 8120 INFO database odoo.modules.loading: loading uom/security/uom_security.xml 
+2023-09-30 20:58:45,614 8120 INFO database odoo.modules.loading: loading uom/security/ir.model.access.csv 
+2023-09-30 20:58:45,637 8120 INFO database odoo.modules.loading: loading uom/views/uom_uom_views.xml 
+2023-09-30 20:58:45,728 8120 INFO database odoo.modules.loading: Module uom loaded in 0.65s, 276 queries 
+2023-09-30 20:58:45,728 8120 INFO database odoo.modules.loading: Loading module base_setup (6/40) 
+2023-09-30 20:58:45,819 8120 INFO database odoo.modules.registry: module base_setup: creating or updating database tables 
+2023-09-30 20:58:45,939 8120 INFO database odoo.modules.loading: loading base_setup/data/base_setup_data.xml 
+2023-09-30 20:58:45,964 8120 INFO database odoo.modules.loading: loading base_setup/views/res_config_settings_views.xml 
+2023-09-30 20:58:46,061 8120 INFO database odoo.modules.loading: loading base_setup/views/res_partner_views.xml 
+2023-09-30 20:58:46,124 8120 INFO database odoo.modules.loading: Module base_setup loaded in 0.40s, 169 queries 
+2023-09-30 20:58:46,124 8120 INFO database odoo.modules.loading: Loading module bus (7/40) 
+2023-09-30 20:58:46,262 8120 INFO database odoo.modules.registry: module bus: creating or updating database tables 
+2023-09-30 20:58:46,276 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:46] "GET /web/static/img/spin.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:46,511 8120 INFO database odoo.modules.loading: loading bus/security/ir.model.access.csv 
+2023-09-30 20:58:46,568 8120 INFO database odoo.modules.loading: Module bus loaded in 0.44s, 102 queries 
+2023-09-30 20:58:46,568 8120 INFO database odoo.modules.loading: Loading module http_routing (8/40) 
+2023-09-30 20:58:46,710 8120 INFO database odoo.modules.registry: module http_routing: creating or updating database tables 
+2023-09-30 20:58:46,759 8120 INFO database odoo.modules.loading: loading http_routing/views/http_routing_template.xml 
+2023-09-30 20:58:46,874 8120 INFO database odoo.modules.loading: loading http_routing/views/res_lang_views.xml 
+2023-09-30 20:58:46,933 8120 INFO database odoo.modules.loading: Module http_routing loaded in 0.36s, 105 queries 
+2023-09-30 20:58:46,934 8120 INFO database odoo.modules.loading: Loading module resource (9/40) 
+2023-09-30 20:58:48,086 8120 INFO database odoo.modules.registry: module resource: creating or updating database tables 
+2023-09-30 20:58:48,512 8120 INFO database odoo.modules.loading: loading resource/data/resource_data.xml 
+2023-09-30 20:58:48,602 8120 INFO database odoo.modules.loading: loading resource/security/ir.model.access.csv 
+2023-09-30 20:58:48,645 8120 INFO database odoo.modules.loading: loading resource/security/resource_security.xml 
+2023-09-30 20:58:48,709 8120 INFO database odoo.modules.loading: loading resource/views/resource_views.xml 
+2023-09-30 20:58:48,922 8120 INFO database odoo.modules.loading: Module resource loaded in 1.99s, 521 queries 
+2023-09-30 20:58:48,922 8120 INFO database odoo.modules.loading: Loading module utm (10/40) 
+2023-09-30 20:58:49,112 8120 INFO database odoo.modules.registry: module utm: creating or updating database tables 
+2023-09-30 20:58:49,391 8120 INFO database odoo.modules.loading: loading utm/data/utm_data.xml 
+2023-09-30 20:58:49,477 8120 INFO database odoo.modules.loading: loading utm/views/utm_campaign_views.xml 
+2023-09-30 20:58:49,563 8120 INFO database odoo.modules.loading: loading utm/views/utm_views.xml 
+2023-09-30 20:58:49,691 8120 INFO database odoo.modules.loading: loading utm/security/ir.model.access.csv 
+2023-09-30 20:58:49,744 8120 INFO database odoo.modules.loading: Module utm loaded in 0.82s, 384 queries 
+2023-09-30 20:58:49,744 8120 INFO database odoo.modules.loading: Loading module iap (14/40) 
+2023-09-30 20:58:49,891 8120 INFO database odoo.modules.registry: module iap: creating or updating database tables 
+2023-09-30 20:58:50,021 8120 INFO database odoo.modules.loading: loading iap/security/ir.model.access.csv 
+2023-09-30 20:58:50,048 8120 INFO database odoo.modules.loading: loading iap/security/ir_rule.xml 
+2023-09-30 20:58:50,074 8120 INFO database odoo.modules.loading: loading iap/views/iap_views.xml 
+2023-09-30 20:58:50,123 8120 INFO database odoo.modules.loading: loading iap/views/res_config_settings.xml 
+2023-09-30 20:58:50,178 8120 INFO database odoo.modules.loading: Module iap loaded in 0.43s, 156 queries 
+2023-09-30 20:58:50,179 8120 INFO database odoo.modules.loading: Loading module mail (15/40) 
+2023-09-30 20:58:52,149 8120 INFO database odoo.modules.registry: module mail: creating or updating database tables 
+2023-09-30 20:58:54,406 8120 INFO database odoo.models: Storing computed values of res.partner.email_normalized 
+2023-09-30 20:58:55,748 8120 INFO database odoo.modules.loading: loading mail/data/mail_groups.xml 
+2023-09-30 20:58:55,808 8120 INFO database odoo.modules.loading: loading mail/wizard/mail_blacklist_remove_views.xml 
+2023-09-30 20:58:55,823 8120 INFO database odoo.modules.loading: loading mail/wizard/mail_compose_message_views.xml 
+2023-09-30 20:58:55,860 8120 INFO database odoo.modules.loading: loading mail/wizard/mail_resend_cancel_views.xml 
+2023-09-30 20:58:55,884 8120 INFO database odoo.modules.loading: loading mail/wizard/mail_resend_message_views.xml 
+2023-09-30 20:58:55,903 8120 INFO database odoo.modules.loading: loading mail/wizard/mail_template_preview_views.xml 
+2023-09-30 20:58:55,924 8120 INFO database odoo.modules.loading: loading mail/wizard/mail_wizard_invite_views.xml 
+2023-09-30 20:58:55,940 8120 INFO database odoo.modules.loading: loading mail/views/mail_message_subtype_views.xml 
+2023-09-30 20:58:55,968 8120 INFO database odoo.modules.loading: loading mail/views/mail_tracking_views.xml 
+2023-09-30 20:58:55,996 8120 INFO database odoo.modules.loading: loading mail/views/mail_notification_views.xml 
+2023-09-30 20:58:56,024 8120 INFO database odoo.modules.loading: loading mail/views/mail_message_views.xml 
+2023-09-30 20:58:56,090 8120 INFO database odoo.modules.loading: loading mail/views/mail_mail_views.xml 
+2023-09-30 20:58:56,127 8120 INFO database odoo.modules.loading: loading mail/views/mail_followers_views.xml 
+2023-09-30 20:58:56,150 8120 INFO database odoo.modules.loading: loading mail/views/mail_ice_server_views.xml 
+2023-09-30 20:58:56,173 8120 INFO database odoo.modules.loading: loading mail/views/mail_channel_partner_views.xml 
+2023-09-30 20:58:56,197 8120 INFO database odoo.modules.loading: loading mail/views/mail_channel_rtc_session_views.xml 
+2023-09-30 20:58:56,226 8120 INFO database odoo.modules.loading: loading mail/views/mail_channel_views.xml 
+2023-09-30 20:58:56,267 8120 INFO database odoo.modules.loading: loading mail/views/mail_shortcode_views.xml 
+2023-09-30 20:58:56,294 8120 INFO database odoo.modules.loading: loading mail/views/mail_activity_views.xml 
+2023-09-30 20:58:56,346 8120 INFO ? werkzeug: 127.0.0.1 - - [30/Sep/2023 20:58:56] "GET /web/static/img/spin.png HTTP/1.1" 200 - - - -
+2023-09-30 20:58:56,390 8120 INFO database odoo.modules.loading: loading mail/views/res_config_settings_views.xml 
+2023-09-30 20:58:56,429 8120 INFO database odoo.modules.loading: loading mail/data/res_partner_data.xml 
+2023-09-30 20:58:56,490 8120 INFO database odoo.modules.loading: loading mail/data/mail_message_subtype_data.xml 
+2023-09-30 20:58:56,509 8120 INFO database odoo.modules.loading: loading mail/data/mail_templates.xml 
+2023-09-30 20:58:56,571 8120 INFO database odoo.modules.loading: loading mail/data/mail_channel_data.xml 
+2023-09-30 20:58:56,629 8120 INFO database odoo.modules.loading: loading mail/data/mail_activity_data.xml 
+2023-09-30 20:58:56,667 8120 INFO database odoo.modules.loading: loading mail/data/ir_cron_data.xml 
+2023-09-30 20:58:56,713 8120 INFO database odoo.modules.loading: loading mail/security/mail_security.xml 
+2023-09-30 20:58:56,868 8120 INFO database odoo.modules.loading: loading mail/security/ir.model.access.csv 
+2023-09-30 20:58:56,984 8120 INFO database odoo.modules.loading: loading mail/views/discuss_public_templates.xml 
+2023-09-30 20:58:57,028 8120 INFO database odoo.modules.loading: loading mail/views/mail_alias_views.xml 
+2023-09-30 20:58:57,058 8120 INFO database odoo.modules.loading: loading mail/views/mail_guest_views.xml 
+2023-09-30 20:58:57,077 8120 INFO database odoo.modules.loading: loading mail/views/mail_message_reaction_views.xml 
+2023-09-30 20:58:57,093 8120 INFO database odoo.modules.loading: loading mail/views/res_users_views.xml 
+2023-09-30 20:58:57,125 8120 INFO database odoo.modules.loading: loading mail/views/res_users_settings_views.xml 
+2023-09-30 20:58:57,148 8120 INFO database odoo.modules.loading: loading mail/views/mail_template_views.xml 
+2023-09-30 20:58:57,188 8120 INFO database odoo.modules.loading: loading mail/views/ir_actions_server_views.xml 
+2023-09-30 20:58:57,211 8120 INFO database odoo.modules.loading: loading mail/views/ir_model_views.xml 
+2023-09-30 20:58:57,257 8120 INFO database odoo.modules.loading: loading mail/views/res_partner_views.xml 
+2023-09-30 20:58:57,351 8120 INFO database odoo.modules.loading: loading mail/views/mail_blacklist_views.xml 
+2023-09-30 20:58:57,393 8120 INFO database odoo.modules.loading: loading mail/views/mail_menus.xml 
+2023-09-30 20:58:57,628 8120 INFO database odoo.modules.loading: Module mail loaded in 7.45s, 3316 queries 
+2023-09-30 20:58:57,629 8120 INFO database odoo.modules.loading: Loading module web_unsplash (16/40) 
+2023-09-30 20:58:57,835 8120 INFO database odoo.modules.registry: module web_unsplash: creating or updating database tables 
+2023-09-30 20:58:57,962 8120 INFO database odoo.modules.loading: loading web_unsplash/views/res_config_settings_view.xml 
+2023-09-30 20:58:58,035 8120 INFO database odoo.modules.loading: Module web_unsplash loaded in 0.41s, 89 queries 
+2023-09-30 20:58:58,035 8120 INFO database odoo.modules.loading: Loading module analytic (17/40) 
+2023-09-30 20:58:58,241 8120 INFO database odoo.modules.registry: module analytic: creating or updating database tables 
+2023-09-30 20:58:58,654 8120 INFO database odoo.modules.loading: loading analytic/security/analytic_security.xml 
+2023-09-30 20:58:58,716 8120 INFO database odoo.modules.loading: loading analytic/security/ir.model.access.csv 
+2023-09-30 20:58:58,751 8120 INFO database odoo.modules.loading: loading analytic/views/analytic_account_views.xml 
+2023-09-30 20:58:58,930 8120 INFO database odoo.modules.loading: Module analytic loaded in 0.90s, 409 queries 
+2023-09-30 20:58:58,930 8120 INFO database odoo.modules.loading: Loading module auth_signup (18/40) 
+2023-09-30 20:58:59,142 8120 INFO database odoo.modules.registry: module auth_signup: creating or updating database tables 
+2023-09-30 20:58:59,258 8120 INFO database odoo.modules.loading: loading auth_signup/data/ir_config_parameter_data.xml 
+2023-09-30 20:58:59,275 8120 INFO database odoo.modules.loading: loading auth_signup/data/ir_cron_data.xml 
+2023-09-30 20:58:59,295 8120 INFO database odoo.modules.loading: loading auth_signup/data/mail_template_data.xml 
+2023-09-30 20:58:59,330 8120 INFO database odoo.modules.loading: loading auth_signup/views/res_config_settings_views.xml 
+2023-09-30 20:58:59,362 8120 INFO database odoo.modules.loading: loading auth_signup/views/res_users_views.xml 
+2023-09-30 20:58:59,405 8120 INFO database odoo.modules.loading: loading auth_signup/views/auth_signup_login_templates.xml 
+2023-09-30 20:58:59,470 8120 INFO database odoo.modules.loading: Module auth_signup loaded in 0.54s, 191 queries 
+2023-09-30 20:58:59,470 8120 INFO database odoo.modules.loading: Loading module auth_totp_mail (19/40) 
+2023-09-30 20:58:59,620 8120 INFO database odoo.modules.registry: module auth_totp_mail: creating or updating database tables 
+2023-09-30 20:58:59,664 8120 INFO database odoo.modules.loading: loading auth_totp_mail/data/ir_action_data.xml 
+2023-09-30 20:58:59,744 8120 INFO database odoo.modules.loading: loading auth_totp_mail/data/mail_template_data.xml 
+2023-09-30 20:58:59,761 8120 INFO database odoo.modules.loading: loading auth_totp_mail/views/res_users_views.xml 
+2023-09-30 20:58:59,828 8120 INFO database odoo.modules.loading: Module auth_totp_mail loaded in 0.36s, 95 queries 
+2023-09-30 20:58:59,829 8120 INFO database odoo.modules.loading: Loading module fetchmail (20/40) 
+2023-09-30 20:59:00,133 8120 INFO database odoo.modules.registry: module fetchmail: creating or updating database tables 
+2023-09-30 20:59:00,288 8120 INFO database odoo.modules.loading: loading fetchmail/data/fetchmail_data.xml 
+2023-09-30 20:59:00,313 8120 INFO database odoo.modules.loading: loading fetchmail/security/ir.model.access.csv 
+2023-09-30 20:59:00,338 8120 INFO database odoo.modules.loading: loading fetchmail/views/fetchmail_views.xml 
+2023-09-30 20:59:00,379 8120 INFO database odoo.modules.loading: loading fetchmail/views/mail_mail_views.xml 
+2023-09-30 20:59:00,405 8120 INFO database odoo.modules.loading: loading fetchmail/views/res_config_settings_views.xml 
+2023-09-30 20:59:00,553 8120 INFO database odoo.modules.loading: Module fetchmail loaded in 0.72s, 189 queries 
+2023-09-30 20:59:00,553 8120 INFO database odoo.modules.loading: Loading module iap_mail (21/40) 
+2023-09-30 20:59:00,694 8120 INFO database odoo.modules.loading: loading iap_mail/data/mail_templates.xml 
+2023-09-30 20:59:00,786 8120 INFO database odoo.modules.loading: Module iap_mail loaded in 0.23s, 28 queries 
+2023-09-30 20:59:00,786 8120 INFO database odoo.modules.loading: Loading module mail_bot (22/40) 
+2023-09-30 20:59:01,056 8120 INFO database odoo.modules.registry: module mail_bot: creating or updating database tables 
+2023-09-30 20:59:01,187 8120 INFO database odoo.modules.loading: loading mail_bot/views/res_users_views.xml 
+2023-09-30 20:59:01,227 8120 INFO database odoo.modules.loading: loading mail_bot/data/mailbot_data.xml 
+2023-09-30 20:59:01,256 8120 INFO database odoo.modules.loading: Module mail_bot loaded in 0.47s, 138 queries 
+2023-09-30 20:59:01,256 8120 INFO database odoo.modules.loading: Loading module phone_validation (23/40) 
+2023-09-30 20:59:01,567 8120 INFO database odoo.modules.registry: module phone_validation: creating or updating database tables 
+2023-09-30 20:59:01,766 8120 INFO database odoo.modules.loading: loading phone_validation/security/ir.model.access.csv 
+2023-09-30 20:59:01,793 8120 INFO database odoo.modules.loading: loading phone_validation/views/phone_blacklist_views.xml 
+2023-09-30 20:59:01,843 8120 INFO database odoo.modules.loading: loading phone_validation/wizard/phone_blacklist_remove_view.xml 
+2023-09-30 20:59:01,880 8120 INFO database odoo.modules.loading: Module phone_validation loaded in 0.62s, 180 queries 
+2023-09-30 20:59:01,880 8120 INFO database odoo.modules.loading: Loading module product (24/40) 
+2023-09-30 20:59:03,267 8120 INFO database odoo.modules.registry: module product: creating or updating database tables 
+2023-09-30 20:59:04,485 8120 INFO database odoo.modules.loading: loading product/data/product_data.xml 
+2023-09-30 20:59:04,536 8120 INFO database odoo.modules.loading: loading product/security/product_security.xml 
+2023-09-30 20:59:04,626 8120 INFO database odoo.modules.loading: loading product/security/ir.model.access.csv 
+2023-09-30 20:59:04,688 8120 INFO database odoo.modules.loading: loading product/wizard/product_label_layout_views.xml 
+2023-09-30 20:59:04,705 8120 INFO database odoo.modules.loading: loading product/views/res_config_settings_views.xml 
+2023-09-30 20:59:04,759 8120 INFO database odoo.modules.loading: loading product/views/product_attribute_views.xml 
+2023-09-30 20:59:04,813 8120 INFO database odoo.modules.loading: loading product/views/product_views.xml 
+2023-09-30 20:59:05,065 8120 INFO database odoo.modules.loading: loading product/views/product_template_views.xml 
+2023-09-30 20:59:05,126 8120 INFO database odoo.modules.loading: loading product/views/product_pricelist_views.xml 
+2023-09-30 20:59:05,236 8120 INFO database odoo.modules.loading: loading product/views/res_partner_views.xml 
+2023-09-30 20:59:05,260 8120 INFO database odoo.modules.loading: loading product/report/product_reports.xml 
+2023-09-30 20:59:05,298 8120 INFO database odoo.modules.loading: loading product/report/product_product_templates.xml 
+2023-09-30 20:59:05,346 8120 INFO database odoo.modules.loading: loading product/report/product_template_templates.xml 
+2023-09-30 20:59:05,368 8120 INFO database odoo.modules.loading: loading product/report/product_packaging.xml 
+2023-09-30 20:59:05,382 8120 INFO database odoo.modules.loading: loading product/report/product_pricelist_report_templates.xml 
+2023-09-30 20:59:05,443 8120 INFO database odoo.modules.loading: Module product loaded in 3.56s, 1393 queries 
+2023-09-30 20:59:05,443 8120 INFO database odoo.modules.loading: Loading module sales_team (25/40) 
+2023-09-30 20:59:05,705 8120 INFO database odoo.modules.registry: module sales_team: creating or updating database tables 
+2023-09-30 20:59:05,811 8120 INFO database odoo.models: Storing computed values of res.users.sale_team_id 
+2023-09-30 20:59:06,000 8120 INFO database odoo.modules.loading: loading sales_team/security/sales_team_security.xml 
+2023-09-30 20:59:06,122 8120 INFO database odoo.modules.loading: loading sales_team/security/ir.model.access.csv 
+2023-09-30 20:59:06,162 8120 INFO database odoo.modules.loading: loading sales_team/data/crm_team_data.xml 
+2023-09-30 20:59:06,251 8120 INFO database odoo.modules.loading: loading sales_team/views/crm_tag_views.xml 
+2023-09-30 20:59:06,277 8120 INFO database odoo.modules.loading: loading sales_team/views/crm_team_views.xml 
+2023-09-30 20:59:06,331 8120 INFO database odoo.modules.loading: loading sales_team/views/crm_team_member_views.xml 
+2023-09-30 20:59:06,395 8120 INFO database odoo.modules.loading: loading sales_team/views/mail_activity_views.xml 
+2023-09-30 20:59:06,408 8120 INFO database odoo.modules.loading: loading sales_team/views/res_partner_views.xml 
+2023-09-30 20:59:06,453 8120 INFO database odoo.modules.loading: Module sales_team loaded in 1.01s, 526 queries 
+2023-09-30 20:59:06,453 8120 INFO database odoo.modules.loading: Loading module partner_autocomplete (26/40) 
+2023-09-30 20:59:06,760 8120 INFO database odoo.modules.registry: module partner_autocomplete: creating or updating database tables 
+2023-09-30 20:59:06,960 8120 INFO database odoo.modules.loading: loading partner_autocomplete/security/ir.model.access.csv 
+2023-09-30 20:59:06,986 8120 INFO database odoo.modules.loading: loading partner_autocomplete/views/res_partner_views.xml 
+2023-09-30 20:59:07,022 8120 INFO database odoo.modules.loading: loading partner_autocomplete/views/res_company_views.xml 
+2023-09-30 20:59:07,040 8120 INFO database odoo.modules.loading: loading partner_autocomplete/views/res_config_settings_views.xml 
+2023-09-30 20:59:07,074 8120 INFO database odoo.modules.loading: loading partner_autocomplete/data/cron.xml 
+2023-09-30 20:59:07,121 8120 INFO database odoo.modules.loading: Module partner_autocomplete loaded in 0.67s, 189 queries 
+2023-09-30 20:59:07,121 8120 INFO database odoo.modules.loading: Loading module portal (27/40) 
+2023-09-30 20:59:07,527 8120 INFO database odoo.modules.registry: module portal: creating or updating database tables 
+2023-09-30 20:59:07,897 8120 INFO database odoo.modules.loading: loading portal/security/ir.model.access.csv 
+2023-09-30 20:59:07,925 8120 INFO database odoo.modules.loading: loading portal/data/mail_template_data.xml 
+2023-09-30 20:59:07,941 8120 INFO database odoo.modules.loading: loading portal/data/mail_templates.xml 
+2023-09-30 20:59:07,960 8120 INFO database odoo.modules.loading: loading portal/views/portal_templates.xml 
+2023-09-30 20:59:08,144 8120 INFO database odoo.modules.loading: loading portal/views/res_config_settings_views.xml 
+2023-09-30 20:59:08,174 8120 INFO database odoo.modules.loading: loading portal/wizard/portal_share_views.xml 
+2023-09-30 20:59:08,198 8120 INFO database odoo.modules.loading: loading portal/wizard/portal_wizard_views.xml 
+2023-09-30 20:59:08,265 8120 INFO database odoo.modules.loading: Module portal loaded in 1.14s, 460 queries 
+2023-09-30 20:59:08,265 8120 INFO database odoo.modules.loading: Loading module sms (28/40) 
+2023-09-30 20:59:08,776 8120 INFO database odoo.modules.registry: module sms: creating or updating database tables 
+2023-09-30 20:59:09,157 8120 INFO database odoo.models: Storing computed values of res.partner.phone_sanitized 
+2023-09-30 20:59:09,461 8120 INFO database odoo.modules.loading: loading sms/data/ir_cron_data.xml 
+2023-09-30 20:59:09,483 8120 INFO database odoo.modules.loading: loading sms/wizard/sms_cancel_views.xml 
+2023-09-30 20:59:09,510 8120 INFO database odoo.modules.loading: loading sms/wizard/sms_composer_views.xml 
+2023-09-30 20:59:09,535 8120 INFO database odoo.modules.loading: loading sms/wizard/sms_template_preview_views.xml 
+2023-09-30 20:59:09,557 8120 INFO database odoo.modules.loading: loading sms/wizard/sms_resend_views.xml 
+2023-09-30 20:59:09,579 8120 INFO database odoo.modules.loading: loading sms/views/ir_actions_views.xml 
+2023-09-30 20:59:09,603 8120 INFO database odoo.modules.loading: loading sms/views/mail_notification_views.xml 
+2023-09-30 20:59:09,637 8120 INFO database odoo.modules.loading: loading sms/views/res_config_settings_views.xml 
+2023-09-30 20:59:09,678 8120 INFO database odoo.modules.loading: loading sms/views/res_partner_views.xml 
+2023-09-30 20:59:09,740 8120 INFO database odoo.modules.loading: loading sms/views/sms_sms_views.xml 
+2023-09-30 20:59:09,788 8120 INFO database odoo.modules.loading: loading sms/views/sms_template_views.xml 
+2023-09-30 20:59:09,837 8120 INFO database odoo.modules.loading: loading sms/security/ir.model.access.csv 
+2023-09-30 20:59:09,886 8120 INFO database odoo.modules.loading: loading sms/security/sms_security.xml 
+2023-09-30 20:59:09,941 8120 INFO database odoo.modules.loading: Module sms loaded in 1.68s, 621 queries 
+2023-09-30 20:59:09,941 8120 INFO database odoo.modules.loading: Loading module snailmail (29/40) 
+2023-09-30 20:59:10,323 15564 INFO ? odoo.service.server: Initiating shutdown 
+2023-09-30 20:59:10,324 15564 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2023-09-30 20:59:10,343 8120 INFO database odoo.modules.registry: module snailmail: creating or updating database tables 
+2023-09-30 20:59:10,587 15564 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 5 connections  
+2023-09-30 20:59:10,802 8120 INFO database odoo.modules.loading: loading snailmail/data/snailmail_data.xml 
+2023-09-30 20:59:10,829 8120 INFO database odoo.modules.loading: loading snailmail/views/report_assets.xml 
+2023-09-30 20:59:10,865 8120 INFO database odoo.modules.loading: loading snailmail/views/snailmail_views.xml 
+2023-09-30 20:59:10,909 8120 INFO database odoo.modules.loading: loading snailmail/wizard/snailmail_confirm_views.xml 
+2023-09-30 20:59:10,926 8120 INFO database odoo.modules.loading: loading snailmail/wizard/snailmail_letter_cancel_views.xml 
+2023-09-30 20:59:10,952 8120 INFO database odoo.modules.loading: loading snailmail/wizard/snailmail_letter_format_error_views.xml 
+2023-09-30 20:59:10,979 8120 INFO database odoo.modules.loading: loading snailmail/wizard/snailmail_letter_missing_required_fields_views.xml 
+2023-09-30 20:59:11,003 8120 INFO database odoo.modules.loading: loading snailmail/security/ir.model.access.csv 
+2023-09-30 20:59:11,073 8120 INFO database odoo.modules.loading: Module snailmail loaded in 1.13s, 376 queries 
+2023-09-30 20:59:11,073 8120 INFO database odoo.modules.loading: Loading module auth_totp_portal (30/40) 
+2023-09-30 20:59:11,293 8120 INFO database odoo.modules.registry: module auth_totp_portal: creating or updating database tables 
+2023-09-30 20:59:11,334 8120 INFO database odoo.modules.loading: loading auth_totp_portal/security/security.xml 
+2023-09-30 20:59:11,436 8120 INFO database odoo.modules.loading: loading auth_totp_portal/views/templates.xml 
+2023-09-30 20:59:11,487 8120 INFO database odoo.modules.loading: Module auth_totp_portal loaded in 0.41s, 76 queries 
+2023-09-30 20:59:11,487 8120 INFO database odoo.modules.loading: Loading module digest (31/40) 
+2023-09-30 20:59:11,745 8120 INFO database odoo.modules.registry: module digest: creating or updating database tables 
+2023-09-30 20:59:11,962 8120 INFO database odoo.modules.loading: loading digest/security/ir.model.access.csv 
+2023-09-30 20:59:11,988 8120 INFO database odoo.modules.loading: loading digest/data/digest_data.xml 
+2023-09-30 20:59:12,028 8120 INFO database odoo.modules.loading: loading digest/data/digest_tips_data.xml 
+2023-09-30 20:59:12,064 8120 INFO database odoo.modules.loading: loading digest/data/ir_cron_data.xml 
+2023-09-30 20:59:12,082 8120 INFO database odoo.modules.loading: loading digest/data/res_config_settings_data.xml 
+2023-09-30 20:59:12,097 8120 INFO database odoo.modules.loading: loading digest/views/digest_views.xml 
+2023-09-30 20:59:12,170 8120 INFO database odoo.modules.loading: loading digest/views/digest_templates.xml 
+2023-09-30 20:59:12,185 8120 INFO database odoo.modules.loading: loading digest/views/res_config_settings_views.xml 
+2023-09-30 20:59:12,264 8120 INFO database odoo.modules.loading: Module digest loaded in 0.78s, 308 queries 
+2023-09-30 20:59:12,264 8120 INFO database odoo.modules.loading: Loading module account (32/40) 
+2023-09-30 20:59:13,204 8120 INFO database odoo.modules.registry: module account: creating or updating database tables 
+2023-09-30 20:59:14,474 8292 INFO ? odoo: Odoo version 15.0-20230929 
+2023-09-30 20:59:14,475 8292 INFO ? odoo: Using configuration file at E:\ODOO\server\odoo.conf 
+2023-09-30 20:59:14,475 8292 INFO ? odoo: addons paths: ['E:\\ODOO\\server\\odoo\\addons', 'c:\\users\\thinkpad\\appdata\\local\\openerp s.a\\odoo\\addons\\15.0', 'e:\\odoo\\server\\odoo\\addons'] 
+2023-09-30 20:59:14,475 8292 INFO ? odoo: database: openpg@localhost:5432 
+2023-09-30 20:59:14,737 8292 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at E:\ODOO\thirdparty\wkhtmltopdf.exe 
+2023-09-30 20:59:15,140 8292 INFO ? odoo.service.server: HTTP service (werkzeug) running on DESKTOP-GR2F5KU:8072 
+2023-09-30 20:59:15,880 8120 INFO database odoo.models: Storing computed values of res.company.invoice_terms_html 
+2023-09-30 20:59:15,881 8120 INFO database odoo.models: Storing computed values of res.company.account_fiscal_country_id 
+2023-09-30 20:59:17,873 8292 INFO ? odoo.service.server: Initiating shutdown 
+2023-09-30 20:59:17,874 8292 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2023-09-30 20:59:18,187 8292 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 2 connections  
+2023-09-30 20:59:19,217 8120 INFO database odoo.modules.loading: loading account/security/account_security.xml 
+2023-09-30 20:59:19,674 8120 INFO database odoo.modules.loading: loading account/security/ir.model.access.csv 
+2023-09-30 20:59:19,933 8120 INFO database odoo.modules.loading: loading account/data/data_account_type.xml 
+2023-09-30 20:59:19,996 8120 INFO database odoo.modules.loading: loading account/data/account_data.xml 
+2023-09-30 20:59:20,179 8120 INFO database odoo.modules.loading: loading account/data/digest_data.xml 
+2023-09-30 20:59:20,208 8120 INFO database odoo.modules.loading: loading account/views/account_report.xml 
+2023-09-30 20:59:20,268 8120 INFO database odoo.modules.loading: loading account/data/mail_template_data.xml 
+2023-09-30 20:59:20,292 8120 INFO database odoo.modules.loading: loading account/views/account_payment_view.xml 
+2023-09-30 20:59:20,440 8120 INFO database odoo.modules.loading: loading account/wizard/account_automatic_entry_wizard_views.xml 
+2023-09-30 20:59:20,466 8120 INFO database odoo.modules.loading: loading account/wizard/account_unreconcile_view.xml 
+2023-09-30 20:59:20,491 8120 INFO database odoo.modules.loading: loading account/wizard/account_move_reversal_view.xml 
+2023-09-30 20:59:20,517 8120 INFO database odoo.modules.loading: loading account/wizard/account_resequence_views.xml 
+2023-09-30 20:59:20,539 8120 INFO database odoo.modules.loading: loading account/wizard/account_payment_register_views.xml 
+2023-09-30 20:59:20,562 8120 INFO database odoo.modules.loading: loading account/views/account_move_views.xml 
+2023-09-30 20:59:21,058 8120 INFO database odoo.modules.loading: loading account/wizard/setup_wizards_view.xml 
+2023-09-30 20:59:21,094 8120 INFO database odoo.modules.loading: loading account/wizard/pos_box.xml 
+2023-09-30 20:59:21,116 8120 INFO database odoo.modules.loading: loading account/views/account_account_type_views.xml 
+2023-09-30 20:59:21,156 8120 INFO database odoo.modules.loading: loading account/views/account_account_views.xml 
+2023-09-30 20:59:21,226 8120 INFO database odoo.modules.loading: loading account/views/account_group_views.xml 
+2023-09-30 20:59:21,263 8120 INFO database odoo.modules.loading: loading account/views/account_journal_views.xml 
+2023-09-30 20:59:21,363 8120 INFO database odoo.modules.loading: loading account/views/account_account_tag_views.xml 
+2023-09-30 20:59:21,409 8120 INFO database odoo.modules.loading: loading account/views/account_bank_statement_views.xml 
+2023-09-30 20:59:21,528 8120 INFO database odoo.modules.loading: loading account/views/account_reconcile_model_views.xml 
+2023-09-30 20:59:21,579 8120 INFO database odoo.modules.loading: loading account/views/account_tax_views.xml 
+2023-09-30 20:59:21,666 8120 INFO database odoo.modules.loading: loading account/views/account_full_reconcile_views.xml 
+2023-09-30 20:59:21,679 8120 INFO database odoo.modules.loading: loading account/views/account_payment_term_views.xml 
+2023-09-30 20:59:21,726 8120 INFO database odoo.modules.loading: loading account/views/account_chart_template_views.xml 
+2023-09-30 20:59:21,813 8120 INFO database odoo.modules.loading: loading account/views/res_partner_bank_views.xml 
+2023-09-30 20:59:21,839 8120 INFO database odoo.modules.loading: loading account/views/report_statement.xml 
+2023-09-30 20:59:21,857 8120 INFO database odoo.modules.loading: loading account/views/terms_template.xml 
+2023-09-30 20:59:21,886 8120 INFO database odoo.modules.loading: loading account/wizard/account_validate_move_view.xml 
+2023-09-30 20:59:21,909 8120 INFO database odoo.modules.loading: loading account/views/res_company_views.xml 
+2023-09-30 20:59:21,941 8120 INFO database odoo.modules.loading: loading account/views/product_view.xml 
+2023-09-30 20:59:22,000 8120 INFO database odoo.modules.loading: loading account/views/account_analytic_view.xml 
+2023-09-30 20:59:22,071 8120 INFO database odoo.modules.loading: loading account/views/report_invoice.xml 
+2023-09-30 20:59:22,119 8120 INFO database odoo.modules.loading: loading account/report/account_invoice_report_view.xml 
+2023-09-30 20:59:22,224 8120 INFO database odoo.modules.loading: loading account/views/account_cash_rounding_view.xml 
+2023-09-30 20:59:22,267 8120 INFO database odoo.modules.loading: loading account/wizard/account_report_common_view.xml 
+2023-09-30 20:59:22,287 8120 INFO database odoo.modules.loading: loading account/views/report_journal.xml 
+2023-09-30 20:59:22,310 8120 INFO database odoo.modules.loading: loading account/views/tax_adjustments.xml 
+2023-09-30 20:59:22,324 8120 INFO database odoo.modules.loading: loading account/wizard/wizard_tax_adjustments_view.xml 
+2023-09-30 20:59:22,355 8120 INFO database odoo.modules.loading: loading account/views/ir_module_views.xml 
+2023-09-30 20:59:22,375 8120 INFO database odoo.modules.loading: loading account/views/res_config_settings_views.xml 
+2023-09-30 20:59:22,461 8120 INFO database odoo.modules.loading: loading account/views/partner_view.xml 
+2023-09-30 20:59:22,559 8120 INFO database odoo.modules.loading: loading account/views/account_journal_dashboard_view.xml 
+2023-09-30 20:59:22,598 8120 INFO database odoo.modules.loading: loading account/views/account_portal_templates.xml 
+2023-09-30 20:59:22,670 8120 INFO database odoo.modules.loading: loading account/views/report_payment_receipt_templates.xml 
+2023-09-30 20:59:22,694 8120 INFO database odoo.modules.loading: loading account/views/account_onboarding_templates.xml 
+2023-09-30 20:59:22,789 8120 INFO database odoo.modules.loading: loading account/data/service_cron.xml 
+2023-09-30 20:59:22,808 8120 INFO database odoo.modules.loading: loading account/views/account_incoterms_view.xml 
+2023-09-30 20:59:22,844 8120 INFO database odoo.modules.loading: loading account/data/account_incoterms_data.xml 
+2023-09-30 20:59:22,891 8120 INFO database odoo.modules.loading: loading account/views/digest_views.xml 
+2023-09-30 20:59:22,918 8120 INFO database odoo.modules.loading: loading account/wizard/account_invoice_send_views.xml 
+2023-09-30 20:59:22,955 8120 INFO database odoo.modules.loading: loading account/views/account_tax_report_views.xml 
+2023-09-30 20:59:23,037 8120 INFO database odoo.modules.loading: loading account/report/account_hash_integrity_templates.xml 
+2023-09-30 20:59:23,061 8120 INFO database odoo.modules.loading: loading account/views/res_currency.xml 
+2023-09-30 20:59:23,090 8120 INFO database odoo.modules.loading: loading account/views/account_menuitem.xml 
+2023-09-30 20:59:23,577 8120 INFO database odoo.modules.loading: loading account/views/account_analytic_default_view.xml 
+2023-09-30 20:59:23,662 8120 INFO database odoo.modules.loading: loading account/wizard/account_tour_upload_bill.xml 
+2023-09-30 20:59:23,694 8120 INFO database odoo.modules.loading: loading account/wizard/accrued_orders.xml 
+2023-09-30 20:59:23,721 8120 INFO database odoo.modules.loading: loading account/views/bill_preview_template.xml 
+2023-09-30 20:59:23,913 8120 INFO database odoo.modules.loading: Module account loaded in 11.65s, 6550 queries 
+2023-09-30 20:59:23,913 8120 INFO database odoo.modules.loading: Loading module account_edi (33/40) 
+2023-09-30 20:59:24,528 8120 INFO database odoo.modules.registry: module account_edi: creating or updating database tables 
+2023-09-30 20:59:25,139 8120 INFO database odoo.modules.loading: loading account_edi/security/ir.model.access.csv 
+2023-09-30 20:59:25,184 8120 INFO database odoo.modules.loading: loading account_edi/views/account_edi_document_views.xml 
+2023-09-30 20:59:25,210 8120 INFO database odoo.modules.loading: loading account_edi/views/account_move_views.xml 
+2023-09-30 20:59:25,310 8120 INFO database odoo.modules.loading: loading account_edi/views/account_payment_views.xml 
+2023-09-30 20:59:25,344 8120 INFO database odoo.modules.loading: loading account_edi/views/account_journal_views.xml 
+2023-09-30 20:59:25,371 8120 INFO database odoo.modules.loading: loading account_edi/data/cron.xml 
+2023-09-30 20:59:25,426 8120 INFO database odoo.modules.loading: Module account_edi loaded in 1.51s, 316 queries 
+2023-09-30 20:59:25,426 8120 INFO database odoo.modules.loading: Loading module payment (34/40) 
+2023-09-30 20:59:26,300 8120 INFO database odoo.modules.registry: module payment: creating or updating database tables 
+2023-09-30 20:59:27,252 8120 INFO database odoo.modules.loading: loading payment/data/payment_icon_data.xml 
+2023-09-30 20:59:27,763 8120 INFO database odoo.modules.loading: loading payment/data/payment_acquirer_data.xml 
+2023-09-30 20:59:28,340 8120 INFO database odoo.modules.loading: loading payment/data/payment_cron.xml 
+2023-09-30 20:59:28,363 8120 INFO database odoo.modules.loading: loading payment/views/payment_portal_templates.xml 
+2023-09-30 20:59:28,422 8120 INFO database odoo.modules.loading: loading payment/views/payment_templates.xml 
+2023-09-30 20:59:28,479 8120 INFO database odoo.modules.loading: loading payment/views/account_invoice_views.xml 
+2023-09-30 20:59:28,521 8120 INFO database odoo.modules.loading: loading payment/views/account_journal_views.xml 
+2023-09-30 20:59:28,551 8120 INFO database odoo.modules.loading: loading payment/views/account_payment_views.xml 
+2023-09-30 20:59:28,586 8120 INFO database odoo.modules.loading: loading payment/views/payment_acquirer_views.xml 
+2023-09-30 20:59:28,662 8120 INFO database odoo.modules.loading: loading payment/views/payment_icon_views.xml 
+2023-09-30 20:59:28,709 8120 INFO database odoo.modules.loading: loading payment/views/payment_transaction_views.xml 
+2023-09-30 20:59:28,783 8120 INFO database odoo.modules.loading: loading payment/views/payment_token_views.xml 
+2023-09-30 20:59:28,840 8120 INFO database odoo.modules.loading: loading payment/views/res_partner_views.xml 
+2023-09-30 20:59:28,883 8120 INFO database odoo.modules.loading: loading payment/security/ir.model.access.csv 
+2023-09-30 20:59:29,140 8120 INFO database odoo.modules.loading: loading payment/security/payment_security.xml 
+2023-09-30 20:59:29,232 8120 INFO database odoo.modules.loading: loading payment/wizards/account_payment_register_views.xml 
+2023-09-30 20:59:29,257 8120 INFO database odoo.modules.loading: loading payment/wizards/payment_acquirer_onboarding_templates.xml 
+2023-09-30 20:59:29,289 8120 INFO database odoo.modules.loading: loading payment/wizards/payment_link_wizard_views.xml 
+2023-09-30 20:59:29,319 8120 INFO database odoo.modules.loading: loading payment/wizards/payment_refund_wizard_views.xml 
+2023-09-30 20:59:29,392 8120 INFO database odoo.modules.loading: Module payment loaded in 3.97s, 1086 queries 
+2023-09-30 20:59:29,392 8120 INFO database odoo.modules.loading: Loading module snailmail_account (35/40) 
+2023-09-30 20:59:30,075 8120 INFO database odoo.modules.registry: module snailmail_account: creating or updating database tables 
+2023-09-30 20:59:30,396 8120 INFO database odoo.modules.loading: loading snailmail_account/views/res_config_settings_views.xml 
+2023-09-30 20:59:30,452 8120 INFO database odoo.modules.loading: loading snailmail_account/wizard/account_invoice_send_views.xml 
+2023-09-30 20:59:30,475 8120 INFO database odoo.modules.loading: loading snailmail_account/security/ir.model.access.csv 
+2023-09-30 20:59:30,509 8120 INFO database odoo.modules.loading: Module snailmail_account loaded in 1.12s, 125 queries 
+2023-09-30 20:59:30,509 8120 INFO database odoo.modules.loading: Loading module account_edi_facturx (36/40) 
+2023-09-30 20:59:30,944 8120 INFO database odoo.modules.registry: module account_edi_facturx: creating or updating database tables 
+2023-09-30 20:59:30,990 8120 INFO database odoo.modules.loading: loading account_edi_facturx/data/account_edi_data.xml 
+2023-09-30 20:59:31,186 8120 INFO database odoo.modules.loading: loading account_edi_facturx/data/facturx_templates.xml 
+2023-09-30 20:59:31,249 8120 INFO database odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['Import/Export electronic invoices with UBL/CII'] to user __system__ #1 via 127.0.0.1 
+2023-09-30 20:59:31,321 8120 INFO database odoo.modules.loading: Module account_edi_facturx loaded in 0.81s, 97 queries 
+2023-09-30 20:59:31,321 8120 INFO database odoo.modules.loading: Loading module payment_transfer (37/40) 
+2023-09-30 20:59:31,801 8120 INFO database odoo.modules.registry: module payment_transfer: creating or updating database tables 
+2023-09-30 20:59:32,069 8120 INFO database odoo.modules.loading: loading payment_transfer/views/payment_views.xml 
+2023-09-30 20:59:32,090 8120 INFO database odoo.modules.loading: loading payment_transfer/views/payment_transfer_templates.xml 
+2023-09-30 20:59:32,113 8120 INFO database odoo.modules.loading: loading payment_transfer/data/payment_acquirer_data.xml 
+2023-09-30 20:59:32,171 8120 INFO database odoo.modules.loading: Module payment_transfer loaded in 0.85s, 108 queries 
+2023-09-30 20:59:32,171 8120 INFO database odoo.modules.loading: Loading module sale (38/40) 
+2023-09-30 20:59:33,038 8120 INFO database odoo.modules.registry: module sale: creating or updating database tables 
+2023-09-30 20:59:34,345 8120 INFO database odoo.modules.loading: loading sale/security/sale_security.xml 
+2023-09-30 20:59:34,660 8120 INFO database odoo.modules.loading: loading sale/security/ir.model.access.csv 
+2023-09-30 20:59:34,778 8120 INFO database odoo.modules.loading: loading sale/report/sale_report.xml 
+2023-09-30 20:59:34,800 8120 INFO database odoo.modules.loading: loading sale/report/sale_report_views.xml 
+2023-09-30 20:59:34,852 8120 INFO database odoo.modules.loading: loading sale/report/sale_report_templates.xml 
+2023-09-30 20:59:34,878 8120 INFO database odoo.modules.loading: loading sale/report/invoice_report_templates.xml 
+2023-09-30 20:59:34,901 8120 INFO database odoo.modules.loading: loading sale/report/report_all_channels_sales_views.xml 
+2023-09-30 20:59:34,912 8120 INFO database odoo.modules.loading: loading sale/data/ir_sequence_data.xml 
+2023-09-30 20:59:34,928 8120 INFO database odoo.modules.loading: loading sale/data/mail_data_various.xml 
+2023-09-30 20:59:34,972 8120 INFO database odoo.modules.loading: loading sale/data/mail_template_data.xml 
+2023-09-30 20:59:34,992 8120 INFO database odoo.modules.loading: loading sale/data/mail_templates.xml 
+2023-09-30 20:59:35,011 8120 INFO database odoo.modules.loading: loading sale/data/sale_data.xml 
+2023-09-30 20:59:35,041 8120 INFO database odoo.modules.loading: loading sale/wizard/sale_make_invoice_advance_views.xml 
+2023-09-30 20:59:35,063 8120 INFO database odoo.modules.loading: loading sale/views/sale_views.xml 
+2023-09-30 20:59:35,578 8120 INFO database odoo.modules.loading: loading sale/views/crm_team_views.xml 
+2023-09-30 20:59:35,639 8120 INFO database odoo.modules.loading: loading sale/views/res_partner_views.xml 
+2023-09-30 20:59:35,717 8120 INFO database odoo.modules.loading: loading sale/views/mail_activity_views.xml 
+2023-09-30 20:59:35,737 8120 INFO database odoo.modules.loading: loading sale/views/variant_templates.xml 
+2023-09-30 20:59:35,761 8120 INFO database odoo.modules.loading: loading sale/views/sale_portal_templates.xml 
+2023-09-30 20:59:35,825 8120 INFO database odoo.modules.loading: loading sale/views/sale_onboarding_views.xml 
+2023-09-30 20:59:35,872 8120 INFO database odoo.modules.loading: loading sale/views/res_config_settings_views.xml 
+2023-09-30 20:59:35,941 8120 INFO database odoo.modules.loading: loading sale/views/payment_templates.xml 
+2023-09-30 20:59:35,966 8120 INFO database odoo.modules.loading: loading sale/views/payment_views.xml 
+2023-09-30 20:59:35,996 8120 INFO database odoo.modules.loading: loading sale/views/product_views.xml 
+2023-09-30 20:59:36,019 8120 INFO database odoo.modules.loading: loading sale/views/product_packaging_views.xml 
+2023-09-30 20:59:36,044 8120 INFO database odoo.modules.loading: loading sale/views/utm_campaign_views.xml 
+2023-09-30 20:59:36,074 8120 INFO database odoo.modules.loading: loading sale/wizard/sale_order_cancel_views.xml 
+2023-09-30 20:59:36,090 8120 INFO database odoo.modules.loading: loading sale/wizard/sale_payment_link_views.xml 
+2023-09-30 20:59:36,145 8120 INFO database odoo.modules.loading: Module sale loaded in 3.97s, 2414 queries 
+2023-09-30 20:59:36,145 8120 INFO database odoo.modules.loading: Loading module sale_management (39/40) 
+2023-09-30 20:59:36,626 8120 INFO database odoo.modules.registry: module sale_management: creating or updating database tables 
+2023-09-30 20:59:37,159 8120 INFO database odoo.modules.loading: loading sale_management/security/sale_management_security.xml 
+2023-09-30 20:59:37,187 8120 INFO database odoo.modules.loading: loading sale_management/data/digest_data.xml 
+2023-09-30 20:59:37,213 8120 INFO database odoo.modules.loading: loading sale_management/views/sale_portal_templates.xml 
+2023-09-30 20:59:37,239 8120 INFO database odoo.modules.loading: loading sale_management/views/sale_order_template_views.xml 
+2023-09-30 20:59:37,304 8120 INFO database odoo.modules.loading: loading sale_management/security/ir.model.access.csv 
+2023-09-30 20:59:37,341 8120 INFO database odoo.modules.loading: loading sale_management/views/res_config_settings_views.xml 
+2023-09-30 20:59:37,393 8120 INFO database odoo.modules.loading: loading sale_management/data/digest_data.xml 
+2023-09-30 20:59:37,412 8120 INFO database odoo.modules.loading: loading sale_management/views/sale_management_views.xml 
+2023-09-30 20:59:37,524 8120 INFO database odoo.modules.loading: loading sale_management/views/digest_views.xml 
+2023-09-30 20:59:37,543 8120 INFO database odoo.modules.loading: loading sale_management/views/sale_order_views.xml 
+2023-09-30 20:59:37,591 8120 INFO database odoo.modules.loading: loading sale_management/report/sale_report_templates.xml 
+2023-09-30 20:59:37,650 8120 INFO database odoo.modules.loading: Module sale_management loaded in 1.50s, 576 queries 
+2023-09-30 20:59:37,650 8120 INFO database odoo.modules.loading: Loading module sale_sms (40/40) 
+2023-09-30 20:59:38,062 8120 INFO database odoo.modules.loading: loading sale_sms/security/ir.model.access.csv 
+2023-09-30 20:59:38,234 8120 INFO database odoo.modules.loading: loading sale_sms/security/security.xml 
+2023-09-30 20:59:38,292 8120 INFO database odoo.modules.loading: Module sale_sms loaded in 0.64s, 44 queries 
+2023-09-30 20:59:38,292 8120 INFO database odoo.modules.loading: 40 modules loaded in 53.21s, 21613 queries (+0 extra) 
+2023-09-30 20:59:38,295 8120 INFO database odoo.modules.loading: loading 41 modules... 
+2023-09-30 20:59:38,295 8120 INFO database odoo.modules.loading: Loading module account_edi_ubl_cii (37/41) 
+2023-09-30 20:59:39,978 8120 INFO database odoo.modules.registry: module account_edi_ubl_cii: creating or updating database tables 
+2023-09-30 20:59:40,174 8120 INFO database odoo.modules.loading: loading account_edi_ubl_cii/data/account_edi_data.xml 
+2023-09-30 20:59:40,193 8120 INFO database odoo.modules.loading: loading account_edi_ubl_cii/data/cii_22_templates.xml 
+2023-09-30 20:59:40,241 8120 INFO database odoo.modules.loading: loading account_edi_ubl_cii/data/ubl_20_templates.xml 
+2023-09-30 20:59:40,319 8120 INFO database odoo.modules.loading: loading account_edi_ubl_cii/data/ubl_21_templates.xml 
+2023-09-30 20:59:40,368 8120 INFO database odoo.modules.loading: Module account_edi_ubl_cii loaded in 2.07s, 168 queries 
+2023-09-30 20:59:40,368 8120 INFO database odoo.modules.loading: 41 modules loaded in 2.07s, 168 queries (+0 extra) 
+2023-09-30 20:59:41,259 8120 INFO database odoo.modules.loading: Modules loaded. 
+2023-09-30 20:59:41,283 8120 INFO database odoo.modules.registry: Registry loaded in 57.730s 
+2023-09-30 20:59:41,284 8120 INFO database odoo.addons.base.models.ir_module: getting next ir.actions.todo() 
+2023-09-30 20:59:41,309 8120 INFO database odoo.modules.registry: Registry changed, signaling through the database 
+2023-09-30 20:59:41,396 8120 INFO database odoo.addons.base.models.ir_http: Generating routing map for key None 
+2023-09-30 20:59:41,396 8120 INFO database odoo.addons.base.models.ir_http: Generating routing map for key None 
+2023-09-30 20:59:41,407 8120 INFO database odoo.addons.base.models.ir_http: Generating routing map for key None 
+2023-09-30 20:59:41,422 8120 INFO database odoo.addons.base.models.ir_http: Generating routing map for key None 
+2023-09-30 20:59:41,453 8120 INFO database odoo.addons.base.models.ir_http: Generating routing map for key None 
+2023-09-30 20:59:41,856 8120 INFO database odoo.addons.base.models.ir_http: Generating routing map for key None 
+2023-09-30 20:59:42,300 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:59:42] "POST /web/dataset/call_button HTTP/1.1" 200 - 23692 22.936 36.157
+2023-09-30 20:59:42,316 8120 INFO database odoo.addons.base.models.ir_module: ALLOW access to module.button_immediate_install on ['Sales'] to user admin #2 via 127.0.0.1 
+2023-09-30 20:59:42,316 8120 INFO database odoo.addons.base.models.ir_module: User #2 triggered module installation 
+2023-09-30 20:59:42,325 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:59:42] "GET / HTTP/1.1" 303 - 2 0.051 12.675
+2023-09-30 20:59:42,325 8120 INFO database odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['Sales'] to user admin #2 via 127.0.0.1 
+2023-09-30 20:59:42,419 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:59:42] "POST /web/dataset/search_read HTTP/1.1" 200 - 7 0.053 49.033
+2023-09-30 20:59:42,458 8120 INFO database odoo.modules.loading: loading 1 modules... 
+2023-09-30 20:59:42,469 8120 INFO database odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2023-09-30 20:59:42,501 8120 INFO database odoo.modules.loading: updating modules list 
+2023-09-30 20:59:42,505 8120 INFO database odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via 127.0.0.1 
+2023-09-30 20:59:44,026 8120 INFO database odoo.modules.loading: loading 41 modules... 
+2023-09-30 20:59:44,065 8120 INFO database odoo.modules.loading: 41 modules loaded in 0.04s, 0 queries (+0 extra) 
+2023-09-30 20:59:44,611 8120 INFO database odoo.modules.loading: Modules loaded. 
+2023-09-30 20:59:44,621 8120 INFO database odoo.modules.registry: Registry loaded in 2.188s 
+2023-09-30 20:59:44,623 8120 INFO database odoo.addons.base.models.ir_module: getting next ir.actions.todo() 
+2023-09-30 20:59:44,628 8120 INFO database odoo.addons.base.models.ir_http: Generating routing map for key None 
+2023-09-30 20:59:44,757 8120 INFO database odoo.modules.registry: Registry changed, signaling through the database 
+2023-09-30 20:59:44,761 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:59:44] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 43 0.374 51.058
+2023-09-30 20:59:44,773 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:59:44] "POST /web/dataset/call_button HTTP/1.1" 200 - 1475 1.122 59.108
+2023-09-30 20:59:44,775 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:59:44] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 37 0.253 48.719
+2023-09-30 20:59:44,776 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:59:44] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 37 0.251 50.438
+2023-09-30 20:59:44,809 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:59:44] "POST /web/dataset/search_read HTTP/1.1" 200 - 10 0.061 1.994
+2023-09-30 20:59:45,157 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:59:45] "POST /web/dataset/search_read HTTP/1.1" 200 - 5 0.010 0.008
+2023-09-30 20:59:47,745 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 20:59:47] "GET /web HTTP/1.1" 500 - 249 0.252 2.387
+2023-09-30 20:59:47,775 8120 ERROR database werkzeug: Error on request:
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\tools\cache.py", line 85, in lookup
+    r = d[key]
+  File "E:\ODOO\server\odoo\tools\func.py", line 71, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\tools\lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: ('ir.qweb', <function IrQWeb._generate_asset_nodes_cache at 0x000001DDA09DC438>, 'web.assets_common', True, False, '', False, False, False, (None, 'en_US'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\addons\base\models\qweb.py", line 219, in render_template
+    yield from compiled_fn(self, values, log)
+  File "<template_195>", line 144, in template_195
+    
+  File "<template_195>", line 135, in t_call_content
+    
+  File "<template_195>", line 18, in qweb_t_set__t_t_t_1_
+    
+  File "E:\ODOO\server\odoo\addons\base\models\ir_qweb.py", line 246, in _get_asset_nodes
+    return self._generate_asset_nodes_cache(bundle, css, js, debug, async_load, defer_load, lazy_load, media)
+  File "<decorator-gen-69>", line 2, in _generate_asset_nodes_cache
+    
+  File "E:\ODOO\server\odoo\tools\cache.py", line 90, in lookup
+    value = d[key] = self.method(*args, **kwargs)
+  File "E:\ODOO\server\odoo\addons\base\models\ir_qweb.py", line 255, in _generate_asset_nodes_cache
+    return self._generate_asset_nodes(bundle, css, js, debug, async_load, defer_load, lazy_load, media)
+  File "E:\ODOO\server\odoo\addons\base\models\ir_qweb.py", line 266, in _generate_asset_nodes
+    return remains + asset.to_node(css=css, js=js, debug=debug, async_load=async_load, defer_load=defer_load, lazy_load=lazy_load)
+  File "E:\ODOO\server\odoo\addons\base\models\assetsbundle.py", line 147, in to_node
+    css_attachments = self.css(is_minified=not is_debug_assets) or []
+  File "E:\ODOO\server\odoo\addons\base\models\assetsbundle.py", line 435, in css
+    self.save_attachment(extension, css)
+  File "E:\ODOO\server\odoo\addons\base\models\assetsbundle.py", line 337, in save_attachment
+    attachment = ira.with_user(SUPERUSER_ID).create(values)
+  File "<decorator-gen-53>", line 2, in create
+    
+  File "E:\ODOO\server\odoo\api.py", line 412, in _model_create_multi
+    return create(self, [arg])
+  File "E:\ODOO\server\odoo\addons\base\models\ir_attachment.py", line 630, in create
+    values['mimetype']
+  File "E:\ODOO\server\odoo\addons\base\models\ir_attachment.py", line 262, in _get_datas_related_values
+    values['store_fname'] = self._file_write(data, values['checksum'])
+  File "E:\ODOO\server\odoo\addons\base\models\ir_attachment.py", line 127, in _file_write
+    fname, full_path = self._get_path(bin_value, checksum)
+  File "E:\ODOO\server\odoo\addons\base\models\ir_attachment.py", line 109, in _get_path
+    os.makedirs(dirname)
+  File "E:\ODOO\python\lib\os.py", line 223, in makedirs
+    mkdir(name, mode)
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\THINKPAD\\AppData\\Local\\OpenERP S.A\\Odoo\\filestore\\database\\49'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\addons\base\models\ir_http.py", line 237, in _dispatch
+    result = request.dispatch()
+  File "E:\ODOO\server\odoo\http.py", line 815, in dispatch
+    r = self._call_function(**self.params)
+  File "E:\ODOO\server\odoo\http.py", line 368, in _call_function
+    return checked_call(self.db, *args, **kwargs)
+  File "E:\ODOO\server\odoo\service\model.py", line 94, in wrapper
+    return f(dbname, *args, **kwargs)
+  File "E:\ODOO\server\odoo\http.py", line 360, in checked_call
+    result.flatten()
+  File "E:\ODOO\server\odoo\http.py", line 1241, in flatten
+    self.response.append(self.render())
+  File "E:\ODOO\server\odoo\http.py", line 1234, in render
+    return env["ir.ui.view"]._render_template(self.template, self.qcontext)
+  File "E:\ODOO\server\odoo\addons\base\models\ir_ui_view.py", line 1992, in _render_template
+    return self.browse(self.get_view_id(template))._render(values, engine)
+  File "E:\ODOO\server\odoo\addons\web_editor\models\ir_ui_view.py", line 29, in _render
+    return super(IrUiView, self)._render(values=values, engine=engine, minimal_qcontext=minimal_qcontext)
+  File "E:\ODOO\server\odoo\addons\base\models\ir_ui_view.py", line 2000, in _render
+    return self.env[engine]._render(self.id, qcontext)
+  File "E:\ODOO\server\odoo\tools\profiler.py", line 292, in _tracked_method_render
+    return method_render(self, template, values, **options)
+  File "E:\ODOO\server\odoo\addons\base\models\ir_qweb.py", line 76, in _render
+    result = super()._render(template, values=values, **compile_options)
+  File "E:\ODOO\server\odoo\addons\base\models\qweb.py", line 134, in _render
+    result = ''.join(rendering)
+  File "E:\ODOO\server\odoo\addons\base\models\qweb.py", line 224, in render_template
+    error=e, template=template, path=log.get('last_path_node'), code=code)
+Exception
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\ODOO\python\lib\site-packages\werkzeug\serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "E:\ODOO\python\lib\site-packages\werkzeug\serving.py", line 294, in execute
+    application_iter = app(environ, start_response)
+  File "E:\ODOO\server\odoo\service\server.py", line 482, in app
+    return self.app(e, s)
+  File "E:\ODOO\server\odoo\service\wsgi_server.py", line 112, in application
+    return application_unproxied(environ, start_response)
+  File "E:\ODOO\server\odoo\service\wsgi_server.py", line 87, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1305, in __call__
+    return self.dispatch(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1271, in __call__
+    return self.app(environ, start_wrapped)
+  File "E:\ODOO\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "E:\ODOO\server\odoo\http.py", line 1500, in dispatch
+    result = ir_http._dispatch()
+  File "E:\ODOO\server\odoo\addons\auth_signup\models\ir_http.py", line 19, in _dispatch
+    return super(Http, cls)._dispatch()
+  File "E:\ODOO\server\odoo\addons\web_editor\models\ir_http.py", line 21, in _dispatch
+    return super(IrHttp, cls)._dispatch()
+  File "E:\ODOO\server\odoo\addons\utm\models\ir_http.py", line 29, in _dispatch
+    response = super(IrHttp, cls)._dispatch()
+  File "E:\ODOO\server\odoo\addons\http_routing\models\ir_http.py", line 519, in _dispatch
+    result = super(IrHttp, cls)._dispatch()
+  File "E:\ODOO\server\odoo\addons\base\models\ir_http.py", line 241, in _dispatch
+    return cls._handle_exception(e)
+  File "E:\ODOO\server\odoo\addons\utm\models\ir_http.py", line 34, in _handle_exception
+    response = super(IrHttp, cls)._handle_exception(exc)
+  File "E:\ODOO\server\odoo\addons\http_routing\models\ir_http.py", line 620, in _handle_exception
+    return super(IrHttp, cls)._handle_exception(exception)
+  File "E:\ODOO\server\odoo\addons\base\models\ir_http.py", line 209, in _handle_exception
+    return request._handle_exception(exception)
+  File "E:\ODOO\server\odoo\http.py", line 759, in _handle_exception
+    return super(HttpRequest, self)._handle_exception(exception)
+  File "E:\ODOO\server\odoo\http.py", line 301, in _handle_exception
+    raise exception.with_traceback(None) from new_cause
+odoo.addons.base.models.qweb.QWebException: [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\THINKPAD\\AppData\\Local\\OpenERP S.A\\Odoo\\filestore\\database\\49'
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\tools\cache.py", line 85, in lookup
+    r = d[key]
+  File "E:\ODOO\server\odoo\tools\func.py", line 71, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:\ODOO\server\odoo\tools\lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: ('ir.qweb', <function IrQWeb._generate_asset_nodes_cache at 0x000001DDA09DC438>, 'web.assets_common', True, False, '', False, False, False, (None, 'en_US'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ODOO\server\odoo\addons\base\models\qweb.py", line 219, in render_template
+    yield from compiled_fn(self, values, log)
+  File "<template_195>", line 144, in template_195
+  File "<template_195>", line 135, in t_call_content
+  File "<template_195>", line 18, in qweb_t_set__t_t_t_1_
+  File "E:\ODOO\server\odoo\addons\base\models\ir_qweb.py", line 246, in _get_asset_nodes
+    return self._generate_asset_nodes_cache(bundle, css, js, debug, async_load, defer_load, lazy_load, media)
+  File "<decorator-gen-69>", line 2, in _generate_asset_nodes_cache
+  File "E:\ODOO\server\odoo\tools\cache.py", line 90, in lookup
+    value = d[key] = self.method(*args, **kwargs)
+  File "E:\ODOO\server\odoo\addons\base\models\ir_qweb.py", line 255, in _generate_asset_nodes_cache
+    return self._generate_asset_nodes(bundle, css, js, debug, async_load, defer_load, lazy_load, media)
+  File "E:\ODOO\server\odoo\addons\base\models\ir_qweb.py", line 266, in _generate_asset_nodes
+    return remains + asset.to_node(css=css, js=js, debug=debug, async_load=async_load, defer_load=defer_load, lazy_load=lazy_load)
+  File "E:\ODOO\server\odoo\addons\base\models\assetsbundle.py", line 147, in to_node
+    css_attachments = self.css(is_minified=not is_debug_assets) or []
+  File "E:\ODOO\server\odoo\addons\base\models\assetsbundle.py", line 435, in css
+    self.save_attachment(extension, css)
+  File "E:\ODOO\server\odoo\addons\base\models\assetsbundle.py", line 337, in save_attachment
+    attachment = ira.with_user(SUPERUSER_ID).create(values)
+  File "<decorator-gen-53>", line 2, in create
+  File "E:\ODOO\server\odoo\api.py", line 412, in _model_create_multi
+    return create(self, [arg])
+  File "E:\ODOO\server\odoo\addons\base\models\ir_attachment.py", line 630, in create
+    values['mimetype']
+  File "E:\ODOO\server\odoo\addons\base\models\ir_attachment.py", line 262, in _get_datas_related_values
+    values['store_fname'] = self._file_write(data, values['checksum'])
+  File "E:\ODOO\server\odoo\addons\base\models\ir_attachment.py", line 127, in _file_write
+    fname, full_path = self._get_path(bin_value, checksum)
+  File "E:\ODOO\server\odoo\addons\base\models\ir_attachment.py", line 109, in _get_path
+    os.makedirs(dirname)
+  File "E:\ODOO\python\lib\os.py", line 223, in makedirs
+    mkdir(name, mode)
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\THINKPAD\\AppData\\Local\\OpenERP S.A\\Odoo\\filestore\\database\\49'
+
+Error when render the template
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\THINKPAD\\AppData\\Local\\OpenERP S.A\\Odoo\\filestore\\database\\49'
+Template: 195
+Path: /t/t/t[1]/t[1]
+Node: <t t-call-assets="web.assets_common" t-js="false"/> - - -
+2023-09-30 21:00:04,143 8120 INFO database odoo.addons.base.models.ir_cron: Starting job `Mail: Email Queue Manager`. 
+2023-09-30 21:00:04,252 8120 INFO database odoo.addons.base.models.ir_cron: Job `Mail: Email Queue Manager` done. 
+2023-09-30 21:00:04,544 8120 INFO database odoo.addons.base.models.ir_cron: Starting job `Notification: Delete Notifications older than 6 Month`. 
+2023-09-30 21:00:04,574 8120 INFO database odoo.addons.base.models.ir_cron: Job `Notification: Delete Notifications older than 6 Month` done. 
+2023-09-30 21:00:04,606 8120 INFO database odoo.addons.base.models.ir_cron: Starting job `Users: Notify About Unregistered Users`. 
+2023-09-30 21:00:04,635 8120 INFO database odoo.addons.base.models.ir_cron: Job `Users: Notify About Unregistered Users` done. 
+2023-09-30 21:00:04,652 8120 INFO database odoo.addons.base.models.ir_cron: Starting job `Partner Autocomplete : Sync with remote DB`. 
+2023-09-30 21:00:04,661 8120 INFO database odoo.addons.base.models.ir_cron: Job `Partner Autocomplete : Sync with remote DB` done. 
+2023-09-30 21:00:04,681 8120 INFO database odoo.addons.base.models.ir_cron: Starting job `SMS: SMS Queue Manager`. 
+2023-09-30 21:00:04,694 8120 INFO database odoo.addons.base.models.ir_cron: Job `SMS: SMS Queue Manager` done. 
+2023-09-30 21:00:04,710 8120 INFO database odoo.addons.base.models.ir_cron: Starting job `Snailmail: process letters queue`. 
+2023-09-30 21:00:04,722 8120 INFO database odoo.addons.base.models.ir_cron: Job `Snailmail: process letters queue` done. 
+2023-09-30 21:00:04,739 8120 INFO database odoo.addons.base.models.ir_cron: Starting job `payment: post-process transactions`. 
+2023-09-30 21:00:04,756 8120 INFO database odoo.addons.base.models.ir_cron: Job `payment: post-process transactions` done. 
+2023-09-30 21:00:07,914 8120 ERROR database odoo.sql_db: bad query: DELETE FROM ir_attachment WHERE id IN (13)
+ERROR: could not serialize access due to concurrent delete
+ 
+2023-09-30 21:00:07,915 8120 INFO database odoo.service.model: SERIALIZATION_FAILURE, retry 1/5 in 0.4018 sec... 
+2023-09-30 21:00:08,273 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:08] "GET /web HTTP/1.1" 200 - 359 0.694 46.270
+2023-09-30 21:00:08,693 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:08] "GET /web/webclient/load_menus/cc931d91e54a704096f27d8d66eb062fb8cc59de2cb8f9b78bb4649a6a4773fd HTTP/1.1" 200 - 1 0.000 0.048
+2023-09-30 21:00:08,694 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:08] "GET /web/assets/88-ec22062/web.assets_common.min.css HTTP/1.1" 200 - 2 0.018 0.053
+2023-09-30 21:00:08,714 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:08] "GET /web/assets/89-ef0de66/web.assets_backend.min.css HTTP/1.1" 200 - 2 0.002 0.087
+2023-09-30 21:00:09,064 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:09] "GET /web/webclient/qweb/a36782629a621bb9ee09f62a0026988a46f0a0de9e5144c389cd23fc80b9bbb8?bundle=web.assets_qweb HTTP/1.1" 200 - 2 0.025 0.384
+2023-09-30 21:00:09,116 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:09] "GET /web/assets/93-55d34a0/web.assets_backend_prod_only.min.js HTTP/1.1" 200 - 2 0.009 0.044
+2023-09-30 21:00:09,242 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:09] "GET /web/assets/90-ec22062/web.assets_common.min.js HTTP/1.1" 200 - 2 0.005 0.601
+2023-09-30 21:00:09,611 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:09] "GET /web HTTP/1.1" 200 - 76 0.203 6.764
+2023-09-30 21:00:09,929 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:09] "GET /web/assets/92-ef0de66/web.assets_backend.min.js HTTP/1.1" 200 - 2 0.006 0.863
+2023-09-30 21:00:11,210 8120 INFO database odoo.addons.partner_autocomplete.models.res_company: Starting enrich of company My Company (1) 
+2023-09-30 21:00:11,254 8120 INFO database odoo.modules.registry: At least one model cache has been invalidated, signaling through the database. 
+2023-09-30 21:00:11,265 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:11] "POST /web/dataset/call_kw/res.company/iap_enrich_auto HTTP/1.1" 200 - 16 0.051 0.046
+2023-09-30 21:00:11,416 8120 INFO database odoo.addons.partner_autocomplete.models.res_company: Starting enrich of company My Company (1) 
+2023-09-30 21:00:11,443 8120 ERROR database odoo.sql_db: bad query: UPDATE "res_company" SET "iap_enrich_auto_done"=true,"write_date"='2023-09-30 21:00:11.227409',"write_uid"=2 WHERE id IN (1)
+ERROR: could not serialize access due to concurrent update
+ 
+2023-09-30 21:00:11,444 8120 INFO database odoo.service.model: SERIALIZATION_FAILURE, retry 1/5 in 0.6543 sec... 
+2023-09-30 21:00:11,466 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:11] "POST /web/action/load HTTP/1.1" 200 - 37 0.104 0.073
+2023-09-30 21:00:11,475 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:11] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 2 0.010 0.016
+2023-09-30 21:00:11,476 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:11] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 3 0.013 0.024
+2023-09-30 21:00:11,847 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:11] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 2 0.018 0.038
+2023-09-30 21:00:11,891 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:11] "POST /web/action/load HTTP/1.1" 200 - 8 0.025 0.057
+2023-09-30 21:00:11,949 8120 ERROR database odoo.sql_db: bad query: INSERT INTO "res_users_settings" ("id", "create_date", "create_uid", "is_discuss_sidebar_category_channel_open", "is_discuss_sidebar_category_chat_open", "use_push_to_talk", "user_id", "write_date", "write_uid") VALUES (nextval('res_users_settings_id_seq'), '2023-09-30 21:00:11.611647', 2, true, true, false, 2, '2023-09-30 21:00:11.611647', 2) RETURNING id
+ERROR: duplicate key value violates unique constraint "res_users_settings_unique_user_id"
+DETAIL:  Key (user_id)=(2) already exists.
+ 
+2023-09-30 21:00:11,950 8120 WARNING database odoo.http: res_users_settings_unique_user_id 
+2023-09-30 21:00:11,955 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:11] "POST /mail/init_messaging HTTP/1.1" 200 - 74 0.323 0.160
+2023-09-30 21:00:11,959 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:11] "POST /longpolling/poll HTTP/1.1" 200 - 17 0.092 0.067
+2023-09-30 21:00:11,975 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:11] "POST /mail/init_messaging HTTP/1.1" 200 - 27 0.174 0.194
+2023-09-30 21:00:12,144 8120 INFO database odoo.modules.registry: At least one model cache has been invalidated, signaling through the database. 
+2023-09-30 21:00:12,150 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:12] "POST /web/dataset/call_kw/res.company/iap_enrich_auto HTTP/1.1" 200 - 29 0.210 0.719
+2023-09-30 21:00:12,221 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:12] "GET /web/image/res.company/1/favicon HTTP/1.1" 200 - 13 0.021 0.032
+2023-09-30 21:00:12,241 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:12] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 2 0.011 0.010
+2023-09-30 21:00:12,322 8120 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2023-09-30 21:00:12,464 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:12] "POST /longpolling/im_status HTTP/1.1" 200 - 17 0.039 0.132
+2023-09-30 21:00:12,477 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:12] "POST /mail/load_message_failures HTTP/1.1" 200 - 3 0.007 0.100
+2023-09-30 21:00:12,580 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:12] "GET /web/image/res.company/1/favicon HTTP/1.1" 200 - 4 0.010 0.032
+2023-09-30 21:00:12,637 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:12] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 200 - 12 0.029 0.038
+2023-09-30 21:00:13,021 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:13] "POST /longpolling/poll HTTP/1.1" 200 - 18 0.040 0.705
+2023-09-30 21:00:13,106 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:13] "POST /web/dataset/call_kw/mail.channel/init_odoobot HTTP/1.1" 200 - 79 0.203 0.444
+2023-09-30 21:00:16,102 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:16] "GET /web/image/res.company/1/favicon HTTP/1.1" 200 - 4 0.019 0.019
+2023-09-30 21:00:16,107 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:16] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 5 0.015 0.025
+2023-09-30 21:00:16,233 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:16] "POST /web/dataset/call_kw/ir.module.module/load_views HTTP/1.1" 200 - 77 0.101 0.083
+2023-09-30 21:00:16,607 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:16] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 42 0.019 0.030
+2023-09-30 21:00:16,943 8120 INFO database werkzeug: 127.0.0.1 - - [30/Sep/2023 21:00:16] "POST /web/dataset/search_read HTTP/1.1" 200 - 3 0.003 0.007
